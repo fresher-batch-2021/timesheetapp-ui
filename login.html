@@ -17,32 +17,34 @@
 
     </header>
 
-    <div class="loginmain">
+    <div class="login_main">
             <div class="login">
                 <img src="images\login.png" alt="img">
-                    <header class="section-header">
-                            <h1 class="section-header__title">Login</h1>
+                    <header class="section_header">
+                            <h1 class="section_header_title">Login</h1>
                           </header>
         
                           <div >
-                                <!-- <form method="post" action="" id="" accept-charset="UTF-8" onsubmit=""> -->
-                            
+                                
+                            <form action="loginresponse.html">
+                                    <label for="StaffEmail">Email</label>
+                                    <input type="email" name="staff[email]" id="StaffEmail" class="input-full" autocorrect="off" autocapitalize="off" autofocus="">
+                                        <div class="grid">
+                                        <div class="grid_item one-half"></div>
+                                          <label for="StaffPassword">Password</label>
+                                        </div>
+                                        <div class="grid_item one-half text-right">
+                                        </div>
+                                      </div>
+                                      <input type="password" value="" name="staff[password]" id="StaffPassword" class="input-full">
+                                      <p>
+                                            <button type="" class="btn">
+                                                    Sign In
+                                                  </button>
+                                                
+                            </form>
                         
-                                <label for="StaffEmail">Email</label>
-                                <input type="email" name="staff[email]" id="StaffEmail" class="input-full" autocorrect="off" autocapitalize="off" autofocus="">
-                                    <div class="grid">
-                                    <div class="grid__item one-half"></div>
-                                      <label for="StaffPassword">Password</label>
-                                    </div>
-                                    <div class="grid__item one-half text-right">
-                                    </div>
-                                  </div>
-                                  <input type="password" value="" name="staff[password]" id="StaffPassword" class="input-full">
-                                  <p>
-                                      <a href="loginresponse.html"><button type="" class="btn">
-                                            Sign In
-                                          </button></a>
-                                            
+                               
                                       
                                   
                                 </p>

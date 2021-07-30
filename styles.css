@@ -1,5 +1,5 @@
 
-/* Index page */
+/* Body */
 
 body {
     font-family: 'Balsamiq Sans', cursive;
@@ -8,6 +8,9 @@ body {
     margin: 0;
     letter-spacing: .2em;
   }
+
+
+  /* Header page  */
 
   .top {
       width: 100%;
@@ -18,28 +21,32 @@ body {
 
 
 
-  .topimg {
+  .top_img {
       width: 100px;
       height: 100px;
       padding: 10px;
       float: left;
   }
 
-  .navnote p {
+  .nav_note p {
       line-height: .1em;
   }
 
-  .navlogin {
-      padding-top: 3%;
-      position: relative;
-      left: 58%;
-  }
 
-  .homeicon {
+  .home_icon {
       position: absolute;
       left: 89%;
       top: 8%;
   }
+
+  .nav_login {
+    padding-top: 3%;
+    position: relative;
+    left: 58%;
+}
+
+/* Index page */
+
   .wrap {
     margin: 4% auto;
     max-width: 1000px;
@@ -51,20 +58,17 @@ body {
     margin-right: 30px;
   }
   
-  .scanner-cam {
+  .scanner_cam {
     border: 5px solid red;
     width: 640px;
     height: 400px;
   }
   
-  .scanner-cam--scanned {
-    border-color: green;
-  }
 
 
 /* Login page */
 
-.loginmain {
+.login_main {
     background-color: #C9D8B6;
 
 }
