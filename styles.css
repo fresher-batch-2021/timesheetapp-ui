@@ -35,7 +35,11 @@ body {
       left: 58%;
   }
 
-
+  .homeicon {
+      position: absolute;
+      left: 89%;
+      top: 8%;
+  }
   .wrap {
     margin: 4% auto;
     max-width: 1000px;
