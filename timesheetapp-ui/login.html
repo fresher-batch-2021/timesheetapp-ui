@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Login</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+<body>
+    <header id="header">
+
+    </header>
+
+    <div class="login_main">
+            <div class="login">
+                <img src="images\login.png" alt="login image">
+                    <header class="section_header">
+                            <h1 class="section_header_title">Login</h1>
+                          </header>
+        
+                          <div >
+                              <form action="loginresponse.html" onsubmit="login()">
+                                <label for="StaffEmail">Email</label>
+                                    <input type="email" name="staff[email]" placeholder="Email" id="staffEmail" class="input-full" autocorrect="off" autocapitalize="off" autofocus="">
+                                        <div class="grid">
+                                        <div class="grid_item one-half"></div>
+                                          <label for="StaffPassword">Password</label>
+                                        </div>
+                                        <div class="grid_item one-half text-right">
+                                        </div>
+                                      </div>
+                                      <input type="password" placeholder="Password" value="" name="staff[password]" id="staffPassword" class="input-full">
+                                      <p>
+                                            <button type="" class="btn">
+                                                    Sign In
+                                                  </button>
+   
+                                </p>
+                              </form>
+                           
+            </div>
+            
+    </div>
+    </div>
+
+    <!-- Response section -->
+    <div>
+      <!-- Display message here after they logged in  -->
+    </div>
+
+    <footer id="footer">
+      <!-- append -->
+
+    </footer>
+
+    <!-- Script section -->
+
+     
+    
+    
+      <!-- $("#header").load("header.html");
+      $("#footer").load("footer.html"); -->
+      <script>
+      function login() {
+        // event.preventDefault();
+        const email = document.querySelector("#staffEmail").value.toLowerCase();
+        const password = document.querySelector("#staffPassword").value;
+
+        if(email  == null || email == "" || email.trim()  == ""){
+          alert("Name cannot be blank");
+          return false;
+        } else if(password == null || password == "" || password.trim() == ""){
+          alert("Password cannot be blank");
+          return false;
+        }
+          else {
+          console.log ("Your email is "+ email + " and your Password is "+password);
+
+        let loginUserData = {
+          "UserName" : email,
+          "Password" : password,
+
+        }
+        console.log(loginUserData);
+        }
+        
+           if(loginUserData === data.loginUserData){
+            console.log("Success, You're in!")
+          }else {
+            console.log("You're not registered, Kindly contact your manager")
+          }
+        
+      };
+      
+      </script> 
+      <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>     
+     <script src="index.js"></script>    
+</body>
+</html>
+
