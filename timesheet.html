@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header id="header"></header>
+
+    <div id="timesheet">
+        
+        <a href="my_timesheet.html"><figure>
+            <img src="images/mytimesheet.png" alt="my timesheet">
+        </figure></a>
+        
+        <a href="timesheet_record.html"><figure>
+            <img src="images/timesheet_record.png" alt="timesheet record">
+        </figure></a>
+        
+     </div>
+     <div id="content">
+      
+     </div>  
+
+    <footer id="footer"></footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js" type="text/javascript"></script>
+<script>
+     $("#header").load("header.html");
+       $("#footer").load("footer.html");
+     $(document).ready(function() {
+  $('#timesheet a').click(function(e) {
+   e.preventDefault();
+   $('#content').load($(this).attr('href'));
+  });
+ });
+</script>
+</body>
+</html>

@@ -1,7 +1,5 @@
 
 
-alert("Welcome");
-
 $("#header").load("header.html");
 $("#footer").load("footer.html");
 $("#afterGetData").load("afterGetData.html");

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header id="header">
+
+    </header>
+    <section class="my_timesheet_table">
+        <table class="my_timesheet_class">
+            <thead>
+                <tr>
+                    <th>TaskName</th>
+                    <th>Time_in</th>
+                    <th>Time_out</th>
+                    <th>Total(hours)</th>
+                    <th>Comments</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Created index page</td>
+                    <td>9:00 </td>
+                    <td> 6:00</td>
+                    <td>9</td>
+                    <td>Nill</td>
+                </tr>
+    
+            </tbody>
+    
+        </table>
+    </section>
+
+    <div class="done">
+        <a href=""><h3>Done</h3></a>
+        
+    </div>
+    <div class="add_task_form">
+        <h3>Add Task</h3>
+        <form  onsubmit="addTask()">
+            <label for="taskName">Enter Task Name</label>
+            <input type="text" name="taskName" id="userId" required autofocus>
+            <br />
+            <label for="time_in">Enter time in</label>
+            <input type="number" name="time in" id="time_in" required>
+            <br />
+            <label for="time_out">Enter time out</label>
+            <input type="number" name="time out" id="time_out" required>
+            <br />
+            <label for="comments">Enter comments</label>
+            <input type="text" name="comments" id="comments" required>
+            <br />
+            <button class="task_button1">Submit</button>
+            <button class="task_button2" type="reset">Reset</button>
+       </form>
+    </div>
+
+    
+    
+    <footer id="footer">
+
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+         $("#header").load("header.html");
+       $("#footer").load("footer.html");
+
+      
+        
+            $("#header").load("_header.html");
+
+            function addTask(){
+                event.preventDefault();
+                
+                const taskName = document.querySelector("#taskName").value;
+                const time_in = parseInt(document.querySelector("#time_in").value);
+                const time_out = parseInt(document.querySelector("#time_out").value);
+                const comments = (document.querySelector("#comments").value);
+                const taskObj = { 
+                    "name" : taskName,
+                    "time in":time_in,
+                    "time out" : time_out,
+                    "comments" : comments,
+                    
+                };
+                console.log(taskObj);
+                alert("Successfully Added Task");
+            // logout
+
+
+            }
+        
+    </script>
+</body>
+</html>

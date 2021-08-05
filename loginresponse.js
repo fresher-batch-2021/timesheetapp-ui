@@ -1,3 +1,6 @@
+
+$("#header").load("header.html");
+$("#footer").load("footer.html");
 // store data
 
 function displayData() {

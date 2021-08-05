@@ -10,6 +10,164 @@ body {
   }
 
 
+  /* Frontlayout page  */
+
+  #navigate_apps  h2 {
+    text-align: center;
+  }
+  .navigate_line {
+    background-color: #EEEEEE;
+    margin: 2% 30%;
+    padding: 1%;
+    color: #fff;
+    opacity: .4;
+    border-radius: 10px;
+    width: 500px;
+    height: 300px;
+    position: relative;
+
+  }
+
+  .navigate_image  {
+    display: inline-block;
+    z-index:2;
+  
+    
+  }
+
+  .navigate_inside a {
+    text-decoration: none;
+    color: black;
+    
+  }
+
+  .navigate_inside {
+    position: absolute;
+    left: 34%;
+    top: 37%;
+  }
+
+
+  .navigate_image {
+    background-color: #B2B1B9;
+    color: #fff;
+    transition: background-color 1s;
+    border-radius: 10px;
+    
+    
+   
+  }
+  
+  .navigate_image:hover {
+    background-color: #004369;
+  }
+  
+  .navigate_image:focus,
+  .navigate_image:active {
+    background-color: black;
+    transition: none;
+  }
+      
+
+  figcaption {
+    margin: 10%;
+  }
+
+
+  /* Timesheet page  */
+
+  #timesheet {
+    background-color: #EEEEEE;
+    width: 200px;
+    height: 300px;
+    margin-top: 5%;
+    margin-left: 2%;
+    padding: 1%;
+    border-radius: 10px;
+    float: left;
+    /* display: inline-block; */
+  }
+  #content {
+   margin-left: 1%;
+  }
+
+  /* My timesheet page  */
+
+  .my_timesheet_table {
+    background-color: #02475E;
+    opacity: 100;
+
+    margin: 3%;
+    margin-left: 20%;
+    padding: 1%;
+    border-radius: 10px;
+   
+  }
+  .my_timesheet_table th, .my_timesheet_table td {
+    border: 1px solid #333;
+      border: 1px solid #ddd;
+      padding: 8px;
+    
+  }
+
+  .my_timesheet_table tr:nth-child(even){background-color: #f2f2f2;}
+
+  .my_timesheet_table tr:hover {background-color: #ddd;}
+
+  .my_timesheet_table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color:#D8E3E7 ;
+  color: black;
+}
+ .my_timesheet_class {
+   padding-left: 20%;
+ }
+
+ .add_task_form {
+   background-color: #515E63;
+   width: 500px;
+   height: 225px;
+   margin-top: 0;
+   margin-left: 30%;
+   padding: 2%;
+   padding-bottom: 0;
+   border-radius: 10px;
+   
+ }
+ .task_button1, .task_button2  {
+  
+   padding: 1%;
+  
+ }
+
+ .task_button1 {
+  margin-top: 3%;
+  margin-left: 40%;
+ }
+ .task_button2 {
+  margin-top: 3%;
+  margin-left: 5%;
+ }
+
+
+ .done {
+   background-color: #515E63;
+   width: 5%;
+   margin-left: 90%;
+   border-radius: 5px;
+   /* padding: .01%; */
+   display: inline-block;
+   
+   
+ }
+
+ .done a {
+  text-decoration: none;
+  color: whitesmoke;
+ }
+
   /* Header page  */
 
 
@@ -60,6 +218,14 @@ body {
     position: absolute;
     right: 3%;
 }
+
+
+.table_align {
+  margin-left: 7%;
+  display: inline-block;
+  /* background-color: #515E63; */
+}
+
 
 /* Index page */
 
@@ -118,7 +284,11 @@ body {
   }
 
   .tableclass {
-    margin-top: 20%;
+    background-color:beige ;
+    margin: 5%;
+    padding: 2%;
+    border-radius: 10px;
+
   }
   
 
