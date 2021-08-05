@@ -18,34 +18,75 @@
                 <!-- append -->
             </header>
             
-               
-            </div>
-            <div class="wrap">
-                <div class="content">
+            
+            <section class="content wrap">
+              
+                <div>
                   <h1>Barcode scanner</h1>
                   <p><strong>Instructions:</strong></p>
                   <ul>
-                    <li>Click to view any barcode and point your screen towards the camera. You should hear a beep!</li>
-                    <li>After that, Once the border on the right is red, the scanner is ready for another barcode.</li>
-                    <li>If you're trying to scan a barcode and the border on the right is still green, move the barcode out of the camera view and back again.</li>
-                  </ul>
+                    <li>Click the barcode to view and point your screen towards the camera.</li>
+                    </ul>
                   <p><strong>Important notes:</strong></p>
                   <ul>
                     <li>Make sure to allow the browser to access your camera.</li>
                 
                   </ul>
+                  </div>
+            </section>
+            <section class="qr_class">
+                  <aside>
+                    <div>
+                
+                      <a id="btn-scan-qr">
+                        <img src="images/qr.png">
+                      </a>
+                    
+                    <canvas hidden="" id="qr-canvas"></canvas>
+                    
+                  </div>
+                  </aside>
+                </section>
+                  <section>
+                  <div>
                   <strong>Scanned codes:</strong>
                   <ul class="codes_list"></ul>
+                  <div >
+                    <table>
+                      <thead>
+                        <th>S NO</th>
+                        <th>Name</th>
+                        <th>Employee_Id</th>
+                        <th>Email</th>
+                        <th>Time_in</th>
+                        <th>Time_out</th>
+                      </thead>
+                      <tbody id="qr-result" hidden=""></tbody>
+
+                    </table>
+                    <p id="outputData"></p>
+                  </div>
+                  
+                 
                 </div>
               
-                <div class="scanner_cam"></div>
-              </div>
-              <!-- <script src="index.js" charset="utf-8"></script> -->
-              <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-              <script>
-                $("#header").load("header.html")
-                </script>
-        
-</body>
+                
+                
+            </section>
+
+             
+
+              <footer id="footer">
+                <!-- append -->
+              </footer>
+
+          
+                <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
+                <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+                <script src="index.js" charset="utf-8"></script>
+                
+  </body>
     
 </html>
+
+
