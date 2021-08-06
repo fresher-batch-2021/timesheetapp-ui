@@ -1,9 +1,7 @@
-
-
 $("#header").load("header.html");
 $("#footer").load("footer.html");
 $("#afterGetData").load("afterGetData.html");
-  
+
 
 //const qrcode = window.qrcode;
 
@@ -34,8 +32,12 @@ qrcode.callback = res => {
 
 btnScanQR.onclick = () => {
   navigator.mediaDevices
-    .getUserMedia({ video: { facingMode: "environment" } })
-    .then(function(stream) {
+    .getUserMedia({
+      video: {
+        facingMode: "environment"
+      }
+    })
+    .then(function (stream) {
       scanning = true;
       qrResult.hidden = true;
       btnScanQR.hidden = true;
@@ -63,13 +65,3 @@ function scan() {
     setTimeout(scan, 300);
   }
 }
-
-
-
-
-
-
-
-
-
-
