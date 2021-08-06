@@ -23,11 +23,11 @@
         <table id="list" class="my_timesheet_class">
             <thead>
                 <tr>
-                    <th>TaskName</th>
-                    <th>Time_in</th>
-                    <th>Time_out</th>
-                    <th>Total(hours)</th>
-                    <th>Comments</th>
+                    <th id="my_timesheet_table_head">TaskName</th>
+                    <th id="my_timesheet_table_head">Time_in</th>
+                    <th id="my_timesheet_table_head">Time_out</th>
+                    <th id="my_timesheet_table_head">Total(hours)</th>
+                    <th id="my_timesheet_table_head">Comments</th>
                 </tr>
             </thead>
             <tbody>
@@ -70,8 +70,7 @@
             <input class="task_button1" id="button" type="button" value=" Reset " onclick="ResetForm()">&nbsp&nbsp&nbsp
             <input class="task_button2" id="button" type="button" value=" Add " onclick="AddData()">
 
-            <!-- <button class="task_button1">Submit</button> -->
-            <!-- <button class="task_button2" type="reset">Reset</button> -->
+           
         </form>
     </div>
 
@@ -91,26 +90,7 @@
 
         $("#header").load("_header.html");
 
-        // function addTask(){
-        //     event.preventDefault();
-
-        //     const taskName = document.querySelector("#taskName").value;
-        //     const time_in = parseInt(document.querySelector("#time_in").value);
-        //     const time_out = parseInt(document.querySelector("#time_out").value);
-        //     const comments = (document.querySelector("#comments").value);
-        //     const taskObj = { 
-        //         "name" : taskName,
-        //         "time in":time_in,
-        //         "time out" : time_out,
-        //         "comments" : comments,
-
-        //     };
-        //     console.log(taskObj);
-        //     alert("Successfully Added Task");
-        // // logout
-
-
-        // }
+       
 
         function AddData() {
             var x = document.getElementById("taskName").value;
@@ -158,7 +138,7 @@
             document.getElementById("list_task").reset();
         }
 
-        // .push("tbody")
+        
     </script>
 </body>
 
