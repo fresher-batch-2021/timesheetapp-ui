@@ -13,15 +13,7 @@ function login() {
     alert("Password cannot be blank");
     // return false;
   }
-  //   else if {
-  //   // console.log ("Your email is "+ email + " and your Password is "+password);
-
-  // let loginUserData = {
-  //   "UserName" : email,
-  //   "Password" : password,
-
-  // }
-  // console.log(loginUserData);
+ 
   else if (email != "agathiyan@gmail.com" || password != "agathi@123") {
     alert("Email or password is invalid");
     return false;
@@ -32,10 +24,6 @@ function login() {
     window.location.href = "timesheet.html";
   }
 
-  //  if(loginUserData === data.loginUserData){
-  //   console.log("Success, You're in!")
-  // }else {
-  //   console.log("You're not registered, Kindly contact your manager")
-  // }
+
 
 };
