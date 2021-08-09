@@ -43,34 +43,34 @@
 
         </table>
     </section>
-    <div class="my_timesheet_div"></div>
-    <div class="done">
-        <form action="timesheet_record.html">
-            <button class="">Submit</button>
-        </form>
+    <!-- <div class="my_timesheet_div"></div> -->
+
         <!-- <a href="timesheet_record.html"><h3>Done</h3></a> -->
 
     </div>
     <div class="add_task_form">
-        <h3>Add Task</h3>
+        <h3 style="color: whitesmoke;">Add Task</h3>
         <form id="list_task">
-            <label for="taskName">Enter Task Name</label>
+            <label for="taskName">Enter Task Name</label><br>
             <input type="text" name="taskName" id="taskName" required autofocus>
             <br>
-            <label for="time_in">Enter time in</label>
+            <label for="time_in">Enter time in</label><br>
             <input type="number" name="time_in" id="time_in" required>
             <br>
-            <label for="time_out">Enter time out</label>
+            <label for="time_out">Enter time out</label><br>
             <input type="number" name="time_out" id="time_out" required>
             <br>
-            <label for="comments">Enter comments</label>
+            <label for="comments">Enter comments</label><br>
             <input type="text" name="comments" id="comments" required>
             <br>
 
-            <input class="task_button1" id="button" type="button" value=" Reset " onclick="ResetForm()">&nbsp&nbsp&nbsp
-            <input class="task_button2" id="button" type="button" value=" Add " onclick="AddData()">
+            <button class="task_button1" id="button" type="button" name="button" value=" Reset " onclick="ResetForm()">Reset</button>
+            <button class="task_button2" id="button" type="button" name="button" value=" Add " onclick="AddData()">Add</button>
 
-           
+            <!-- <input class="task_button1" id="button" type="button" value=" Reset " onclick="ResetForm()">&nbsp&nbsp&nbsp
+            <input class="task_button2" id="button" type="button" value=" Add " onclick="AddData()"> -->
+            <button id="display-button" class="task_button3" onclick="">Submit</button>
+
         </form>
     </div>
 
@@ -88,9 +88,9 @@
 
 
 
-        $("#header").load("_header.html");
+        // $("#header").load("_header.html");
 
-       
+
 
         function AddData() {
             var x = document.getElementById("taskName").value;
@@ -126,9 +126,11 @@
                     totalHours + "</td><td>" + comments + "</td></tr>";
                 $(rows).appendTo("#list tbody");
             }
+
         }
 
         function displayTasks() {
+
 
         }
 
@@ -138,7 +140,9 @@
             document.getElementById("list_task").reset();
         }
 
-        
+    </script>
+    <script src="timesheet_record.js">
+
     </script>
 </body>
 
