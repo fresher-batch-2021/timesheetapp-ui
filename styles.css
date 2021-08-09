@@ -361,7 +361,7 @@ top: 30%;
     /* margin-right: 5%; */
     /* padding: 2%; */
     border-radius: 10px;
-    position: fixed;
+    position: absolute;
     top: 30%;
     left: 25%;
 

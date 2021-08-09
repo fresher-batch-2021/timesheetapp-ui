@@ -29,13 +29,13 @@
 
       <div>
         <form onsubmit="login()">
-          <label for="staffEmail">Email</label>
+          <label for="staffEmail">Email(*)</label>
           <input type="email" name="email" placeholder="Email" id="staffEmail" class="input-full" autocorrect="off"
-            autocapitalize="off" autofocus="">
-          <label for="staffPassword">Password</label>
+            autocapitalize="off" autofocus="" required>
+          <label for="staffPassword">Password(*)</label>
           <input type="password" name="password" placeholder="Password" value="" id="staffPassword" class="input-full">
 
-          <button type="" class="btn">
+          <button type="" class="btn" required>
             Sign In
           </button>
 
