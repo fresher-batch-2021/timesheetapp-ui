@@ -19,15 +19,15 @@
     <header id="header">
 
     </header>
-    <section class="my_timesheet_table">
-        <table id="list" class="my_timesheet_class">
+    <section class="my-timesheet-table">
+        <table id="list" class="my-timesheet-class">
             <thead>
                 <tr>
-                    <th id="my_timesheet_table_head">TaskName</th>
-                    <th id="my_timesheet_table_head">Time_in</th>
-                    <th id="my_timesheet_table_head">Time_out</th>
-                    <th id="my_timesheet_table_head">Total(hours)</th>
-                    <th id="my_timesheet_table_head">Comments</th>
+                    <th id="my-timesheet-table-head">TaskName</th>
+                    <th id="my-timesheet-table-head">timeIn</th>
+                    <th id="my-timesheet-table-head">timeOut</th>
+                    <th id="my-timesheet-table-head">Total(hours)</th>
+                    <th id="my-timesheet-table-head">Comments</th>
                 </tr>
             </thead>
             <tbody>
@@ -48,28 +48,29 @@
         <!-- <a href="timesheet_record.html"><h3>Done</h3></a> -->
 
     </div>
-    <div class="add_task_form">
+    <div class="add-task-form">
         <h3 style="color: whitesmoke;">Add Task</h3>
-        <form id="list_task">
+        <form id="list-task">
             <label for="taskName">Enter Task Name</label><br>
             <input type="text" name="taskName" id="taskName" required autofocus>
             <br>
-            <label for="time_in">Enter time in</label><br>
-            <input type="number" name="time_in" id="time_in" required>
+            <label for="timeIn">Enter time in</label><br>
+            <input type="number" name="timeIn" id="timeIn" required>
             <br>
-            <label for="time_out">Enter time out</label><br>
-            <input type="number" name="time_out" id="time_out" required>
+            <label for="timeOut">Enter time out</label><br>
+            <input type="number" name="timeOut" id="timeOut" required>
             <br>
             <label for="comments">Enter comments</label><br>
             <input type="text" name="comments" id="comments" required>
             <br>
 
-            <button class="task_button1" id="button" type="button" name="button" value=" Reset " onclick="ResetForm()">Reset</button>
-            <button class="task_button2" id="button" type="button" name="button" value=" Add " onclick="AddData()">Add</button>
+            
+            <button class="task-button2" id="button" type="button" name="button" value=" Add " onclick="AddData()">Add</button>
 
-            <!-- <input class="task_button1" id="button" type="button" value=" Reset " onclick="ResetForm()">&nbsp&nbsp&nbsp
-            <input class="task_button2" id="button" type="button" value=" Add " onclick="AddData()"> -->
-            <button id="display-button" class="task_button3" onclick="">Submit</button>
+            <!-- <input class="task-button1" id="button" type="button" value=" Reset " onclick="ResetForm()">&nbsp&nbsp&nbsp
+            <input class="task-button2" id="button" type="button" value=" Add " onclick="AddData()"> -->
+            <button id="display-button" class="task-button3" onclick="">Submit</button>
+            <button class="task-button1" id="button" type="button" name="button" value=" Reset " onclick="ResetForm()">Reset</button>
 
         </form>
     </div>
@@ -94,8 +95,8 @@
 
         function AddData() {
             var x = document.getElementById("taskName").value;
-            var y = document.getElementById("time_in").value;
-            var a = document.getElementById("time_out").value;
+            var y = document.getElementById("timeIn").value;
+            var a = document.getElementById("timeOut").value;
             var b = document.getElementById("comments").value;
             var letters = '/^[a-zA-Z]+$/';
             if ((parseInt(x) != (x)) && (y == parseInt(y)) && (a == parseInt(a)) && (b == parseInt(b))) {
@@ -103,26 +104,32 @@
             } else {
                 var rows = "";
                 var taskName = document.getElementById("taskName").value;
-                var time_in = document.getElementById("time_in").value;
-                var time_out = document.getElementById("time_out").value;
-                var totalHours = (time_out - time_in);
+                var timeIn = document.getElementById("timeIn").value;
+                var timeOut = document.getElementById("timeOut").value;
+                var totalHours = (timeOut - timeIn);
                 var comments = document.getElementById("comments").value;
                 var taskObj = {
-                    inTime: time_in,
-                    outTime: time_out,
+                    inTime: timeIn,
+                    outTime: timeOut,
                     totalHours: totalHours,
                     comments: comments,
                     taskName: taskName
                 };
                 console.log(taskObj);
+
+
+                let taskStr = localStorage.getItem("TASKS");
+                let tasks = taskStr != null ? JSON.parse(taskStr): []; 
                 tasks.push(taskObj);
+
+
                 //store all tasks in localStorage
                 localStorage.setItem("TASKS", JSON.stringify(tasks));
 
 
 
 
-                rows += "<tr><td>" + taskName + "</td><td>" + time_in + "</td><td>" + time_out + "</td><td>" +
+                rows += "<tr><td>" + taskName + "</td><td>" + timeIn + "</td><td>" + timeOut + "</td><td>" +
                     totalHours + "</td><td>" + comments + "</td></tr>";
                 $(rows).appendTo("#list tbody");
             }
@@ -134,10 +141,10 @@
 
         }
 
-        const tasks = [];
+        
 
         function ResetForm() {
-            document.getElementById("list_task").reset();
+            document.getElementById("list-task").reset();
         }
 
     </script>
