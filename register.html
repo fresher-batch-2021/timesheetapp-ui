@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- axios -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <title>Register</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header id="header"></header>
+
+
+    <section class="register-container">
+
+       
+
+        <div class="register-main">
+            <div class="register">
+                <img src="images\register.png" alt="login image">
+      <header class="section-header">
+        <span><h1 class="section-header-title">Register</h1></span>
+      </header>
+                <div>
+                    <form onsubmit="register()">
+                        <label for="registerName" title="Name">Name</label><br>
+                            <input type="text" name="name" required autocomplete="off" id="registerName" placeholder="Your Name" autofocus><br>
+                            
+                            <label for="registerEmail" title="email">Email</label><br>
+                                <input type="email" name = "email" required autocomplete="off" id="registerEmail" placeholder="Your Email"><br>
+                               
+                           
+                                <label for="registerPassword" title="password">Password</label><br>
+                            <input type="password"name = "password" required autocomplete="off" id="registerPassword" placeholder="Password"><br>
+                            
+                        
+                            <label for="registerConfirmPassword" title="confirm">Confrim Password</label><br>
+                            <input type="password" name="registerConfrimPassword" required autocomplete="off" id="registerConfirmPassword" placeholder="Confrim Password"><br> <br>
+                            
+                        
+                        <button type="submit" class="btn">Register</button>
+                </div>
+                
+        
+                </form>
+            </div>
+        </div>
+
+        
+
+    </section>
+    <footer id="footer"></footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+    <script>
+        $("#header").load("header.html");
+$("#footer").load("footer.html");
+
+
+function register() {
+   
+  event.preventDefault();
+  const name = document.querySelector("#registerName").value;
+  
+  const email = document.querySelector("#registerEmail").value.toLowerCase();
+  const password = document.querySelector("#registerPassword").value;
+  const confrimPassword = document.querySelector("#registerConfirmPassword").value;
+  if (name == null || name == "" || name.trim() == "") {
+    alert("Name cannot be blank");
+    // return false;
+  } else if (email == null || email == "" || email.trim() == "") {
+    alert("Email cannot be blank");
+    // return false;
+  }else if (password == null || password == "" || password.trim() == "") {
+    alert("Password cannot be blank");
+    // return false;
+ }
+ else if (password.length < 8){
+    alert("Password must be greater than 8 characters");
+ } 
+    else if (confrimPassword == null || confrimPassword == "" || confrimPassword.trim() == "") {
+    alert("Password cannot be blank");
+    // return false;
+ }else if (password != confrimPassword) {
+     alert("Confrim Password must be same as Password you entered");
+ }
+  else {
+
+
+    alert("Successfully Registered");
+    window.location.href = "login.html";
+  }
+
+
+
+}
+    </script>
+</body>
+
+</html>

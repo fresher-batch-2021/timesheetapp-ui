@@ -10,11 +10,17 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
-
-  <link rel="icon" href="images/favicon.ico">
+  
+<!-- css -->
+<!-- google fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">  
+<link rel="icon" href="images/favicon.ico">
   <link rel="stylesheet" href="styles.css">
+  
+<!-- axios -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+</head>
 <body>
   <header id="header">
 
@@ -33,9 +39,9 @@
           <input type="email" name="email" placeholder="Email" id="staffEmail" class="input-full" autocorrect="off"
             autocapitalize="off" autofocus="" required>
           <label for="staffPassword">Password(*)</label>
-          <input type="password" name="password" placeholder="Password" value="" id="staffPassword" class="input-full">
+          <input type="password" name="password" placeholder="Password" value="" id="staffPassword" class="input-full" required>
 
-          <button type="" class="btn" required>
+          <button type="submit" class="btn">
             Sign In
           </button>
 

@@ -52,14 +52,22 @@ body {
 
 .home-icon {
   position: absolute;
-  right: 9%;
+  right: 12%;
+  top: 40%;
+}
+
+.nav-register {
+ 
+  position: absolute;
+  right: 8%;
   top: 40%;
 }
 
 .nav-login {
-  padding-top: 3%;
+  
   position: absolute;
   right: 3%;
+  top: 30%;
 }
 
 
@@ -94,6 +102,10 @@ body {
 .navigate-image {
   display: inline-block;
   z-index: 2;
+  background-color: #B2B1B9;
+  color: #fff;
+  transition: background-color 1s;
+  border-radius: 10px;
 
 
 }
@@ -111,15 +123,7 @@ body {
 }
 
 
-.navigate-image {
-  background-color: #B2B1B9;
-  color: #fff;
-  transition: background-color 1s;
-  border-radius: 10px;
 
-
-
-}
 
 
 .navigate-image:hover {
@@ -391,9 +395,29 @@ top: 30%;
 
 }
 
+/* Register page */
+
+.register-main {
+  background-color: #C9D8B6;
+
+}
+
+.register {
+
+
+width: 30%;
+background-color: #515E63;
+padding: 1% 2% 1% 3%;
+border-radius: 5%;
+position: absolute;
+top: 30%;
+left: 33%;
+
+}
+
 /* Login page */
 
-.login_main {
+.login-main {
   background-color: #C9D8B6;
 
 }
@@ -411,7 +435,7 @@ left: 33%;
 
 }
 
-input[type=email],
+input[type=text],input[type=email],
 input[type=password] {
   width: 90%;
   padding: 1.5%;
@@ -420,6 +444,7 @@ input[type=password] {
 
 .btn {
   width: 94%;
+  margin-top: 1%;
   padding: 2%;
   border-radius: 6px;
 
