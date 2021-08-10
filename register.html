@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- axios -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Register</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -73,33 +73,62 @@ function register() {
   const email = document.querySelector("#registerEmail").value.toLowerCase();
   const password = document.querySelector("#registerPassword").value;
   const confrimPassword = document.querySelector("#registerConfirmPassword").value;
-  if (name == null || name == "" || name.trim() == "") {
-    alert("Name cannot be blank");
-    // return false;
-  } else if (email == null || email == "" || email.trim() == "") {
-    alert("Email cannot be blank");
-    // return false;
-  }else if (password == null || password == "" || password.trim() == "") {
-    alert("Password cannot be blank");
-    // return false;
- }
- else if (password.length < 8){
-    alert("Password must be greater than 8 characters");
- } 
-    else if (confrimPassword == null || confrimPassword == "" || confrimPassword.trim() == "") {
-    alert("Password cannot be blank");
-    // return false;
- }else if (password != confrimPassword) {
-     alert("Confrim Password must be same as Password you entered");
- }
-  else {
+//   if (name == null || name == "" || name.trim() == "") {
+//     alert("Name cannot be blank");
+//     // return false;
+//   } else if (email == null || email == "" || email.trim() == "") {
+//     alert("Email cannot be blank");
+//     // return false;
+//   }else if (password == null || password == "" || password.trim() == "") {
+//     alert("Password cannot be blank");
+//     // return false;
+//  }
+//  else if (password.length < 8){
+//     alert("Password must be greater than 8 characters");
+//  } 
+//     else if (confrimPassword == null || confrimPassword == "" || confrimPassword.trim() == "") {
+//     alert("Password cannot be blank");
+//     // return false;
+//  }else if (password != confrimPassword) {
+//      alert("Confrim Password must be same as Password you entered");
+//  }
+//   else {
 
 
-    alert("Successfully Registered");
-    window.location.href = "login.html";
+//     alert("Successfully Registered");
+//     window.location.href = "login.html";
+//   }
+
+  switch(true){
+    case(name == null || name == "" || name.trim() == ""): {alert("Name cannot be blank");break;}
+    case (email == null || email == "" || email.trim() == ""):{alert("Name cannot be blank");break;}
+    case (password == null || password == "" || password.trim() == ""):{alert("Password cannot be blank");break;}
+    case(password.length < 8):{alert("Password must be greater thab 8 characters");break;}
+    case(confrimPassword == null || confrimPassword == "" || confrimPassword.trim() == ""):{alert("Password cannot be blank");break};
+    case(password != confrimPassword):{alert("Confrim Password must be same as Password you entered")};
+    // case (email != "agathiyan@gmail.com" || password != "agathi@123"):{alert("Email or password is invalid");break;}
+    default:{
+      // connecting to server
+      const registerObj={
+          "name":name,
+        "email":email,
+        "password":password
+      };
+      //login url
+      const url="https://product-mock-api.herokuapp.com/timesheetapp/api/v1/auth/register";
+
+      axios.post(url,registerObj).then(res =>{
+        //for printing 
+        console.log(res);
+        alert("Registration succesfull");
+        window.location.href="login.html";
+      }).catch(err =>{
+        console.log(err);
+        alert("unable to register");
+
+      });
+    }
   }
-
-
 
 }
     </script>
