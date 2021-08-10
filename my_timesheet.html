@@ -13,6 +13,8 @@
 
     <link rel="icon" href="images/favicon.ico">
     <link rel="stylesheet" href="styles.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
@@ -100,16 +102,36 @@
                 var totalHours = (timeOut - timeIn);
                 var comments = document.getElementById("comments").value;
                 var taskObj = {
+                    "name": taskName,
+                    "attendanceDate":"2019-12-31T18:30:00.00z",
                     inTime: timeIn,
                     outTime: timeOut,
                     totalHours: totalHours,
-                    comments: comments,
-                    taskName: taskName
+                    comments: comments
+                    
                 };
+
                 console.log(taskObj);
+                const url="https://product-mock-api.herokuapp.com/timesheetapp/api/v1/tasks";
+                axios.post(url,taskObj).then(res=>{
+                    displayTasks();
+                    alert("added to server");
+                        //============================= 
+                }).catch(err=>{
+                    alert("error in sending data");
+                });
 
+            }
 
-                let taskStr = localStorage.getItem("TASKS");
+        }
+
+        function displayTasks() {
+            const url="https://product-mock-api.herokuapp.com/timesheetapp/api/v1/tasks";
+            axios.get(url).then(res=>{
+                let datas=res.data;
+
+            });
+            let taskStr = localStorage.getItem("TASKS");
                 let tasks = taskStr != null ? JSON.parse(taskStr): []; 
                 tasks.push(taskObj);
 
@@ -117,17 +139,13 @@
                 //store all tasks in localStorage
                 localStorage.setItem("TASKS", JSON.stringify(tasks));
 
-
-
-
-                rows += "<tr><td>" + taskName + "</td><td>" + timeIn + "</td><td>" + timeOut + "</td><td>" +
+                for(let task of datas){
+                        
+                rows += "<tr><td>" + task.n + "</td><td>" + timeIn + "</td><td>" + timeOut + "</td><td>" +
                     totalHours + "</td><td>" + comments + "</td></tr>";
                 $(rows).appendTo("#list tbody");
-            }
+                }
 
-        }
-
-        function displayTasks() {
 
 
         }
@@ -137,7 +155,7 @@
         function ResetForm() {
             document.getElementById("list-task").reset();
         }
-
+displayTasks();
     </script>
     <script src="timesheet_record.js">
 

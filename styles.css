@@ -451,16 +451,15 @@ input[type=password] {
   background-color: #F9F9F9;
 }
 
-
 /* Footer Section */
-
+/* 
 .footer {
   margin: 0 auto;
   background-color: #515E63;
-  position: fixed;
+  /* position: fixed;
   bottom: 0;
   left: 0;
-  right: 0;
+  right: 0; 
 }
 
 .footer p {
@@ -468,4 +467,4 @@ input[type=password] {
   line-height: 1rem;
   text-align: center;
 
-}
+} */
