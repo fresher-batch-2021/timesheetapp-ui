@@ -15,21 +15,20 @@
     <link rel="icon" href="images/favicon.ico">
     <link rel="stylesheet" href="styles.css">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+ <!-- axios -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </head>
 
 <body>
+    
+    
     <header id="header">
 
     </header>
   
     <div id="afterGetData">
         <!-- append -->
-
-        <section>
-         
-        </section>
         <section class="table-class">
             <table id="table-to" class="record-table" style="border:1px solid black" summary = "Timesheet Listed Data ">
                 <thead>
@@ -39,6 +38,7 @@
                         <th id="table-class-head">Time_out</th>
                         <th id="table-class-head">Total(hours)</th>
                         <th id="table-class-head">Comments</th>
+                        <th id="table-class-head">Actions</th>
                     </tr>
                 </thead>
                 <tbody id="table-to-body">
@@ -53,49 +53,44 @@
 
     </div>
 
-    <footer id="footer">
-        <!-- append -->
-    </footer>
+    
 
-    <!-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> -->
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="timesheet_record.js" charset="utf-8"></script>
 
-    <!-- table copy javascript -->
-    <!-- <script>
-        function copytable() {
-            var source = document.getElementById('list');
-            var destination = document.getElementById('table-to');
-            var copy = source.cloneNode(true);
-            copy.setAttribute('id', 'table-to');
-            destination.parentNode.replaceChild(copy, destination);
-        }
-        setTimeout(function () {
-            copytable();
-        }, 0);
-    </script> -->
+   
+    <script>
+    //    geeting data
     
-    <script type="text/javascript">
-    // function myfunction1() { //remember code
+  
+    let tasksStr = localStorage.getItem("TASKS");
+   let tasks = JSON.parse(tasksStr);
+   console.log(tasks);
+   
+   let url ="https://product-mock-api.herokuapp.com/timesheetapp/api/v1/tasks";
+   
+   axios.get(url).then(res =>{
+     alert("getting data");
+     let tasks = res.data;
+    var content="";
+    
+     for(let task of tasks){
+     
+      content= content+`<tr><td>${task.name}</td><td>${task.inTime}</td><td>${task.outTime}</td><td>${task.totalHours}</td><td>${task.comments}</td><td>`;
+     }
+     console.log(content);
+    document.querySelector("#table-to-body").innerHTML = content;
+   }).catch(err => {
+     alert("error in getting data");
 
-    // var texttosave = document.getElementById('textline').value;
+   });
 
-    // localStorage.setItem('mynumber', texttosave);
+    </script> 
 
-    // }
-
-    // function myfunction2() { //recall code
-
-    // document.getElementById('recalledtext').innerHTML =
-
-    // localStorage.getItem('mynumber');
-
-    // }
-
-    retrieveTask(); 
-
-    </script>   
+    <footer id="footer">
+        <!-- append -->
+    </footer> 
 </body>
 
 </html>
