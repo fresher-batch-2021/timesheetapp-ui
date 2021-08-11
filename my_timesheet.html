@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>My Timesheet</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,9 +13,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
 
     <link rel="icon" href="images/favicon.ico">
+
     <link rel="stylesheet" href="styles.css">
     <!-- axios -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" 
+    integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 </head>
 
 <body>
@@ -25,8 +30,7 @@
         <table id="list" class="my-timesheet-class"  summary="Timsheet Data for logged in user">
             <thead>
                 <tr>
-                    <!-- "userId": 0,
-                    "attendanceDate": "2019-12-31T00:00:00.000Z", -->
+                    
                     <th id="my-timesheet-table-head">userId</th>
                     <th id="my-timesheet-table-head">attendanceDate</th>
                     <th id="my-timesheet-table-head">TaskName</th>
@@ -56,9 +60,15 @@
     <div class="add-task-form">
         <h3 style="color: whitesmoke;">Add Task</h3>
         <form id="list-task">
-            <label for="attendanceDate">Enter Task Name</label><br>
+
+            <body onload="validDate()">
+                <label for="attendanceDate">Enter Attendance Date</label><br>
             <input type="date" name="attendanceDate" id="attendanceDate" required autofocus>
-            <br>
+            <br>          
+                </body>
+
+
+            
             <label for="taskName">Enter Task Name</label><br>
             <input type="text" name="taskName" id="taskName" required>
             <br>
@@ -74,7 +84,7 @@
 
             
             <button class="task-button2" id="button" type="button" name="button" value=" Add " onclick="AddData()">Add</button>
-            <button id="display-button" class="task-button3" onclick="">Submit</button>
+            <!-- <button id="display-button" class="task-button3" onclick="">Submit</button> -->
             <button class="task-button1" id="button" type="button" name="button" value=" Reset " onclick="ResetForm()">Reset</button>
 
         </form>
@@ -88,109 +98,8 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script>
-        $("#header").load("header.html");
-        $("#footer").load("footer.html");
-
-
-
-        function AddData() {
-            // below variable r for checking
-            var x = document.getElementById("taskName").value;
-            var y = document.getElementById("timeIn").value;
-            var a = document.getElementById("timeOut").value;
-            var b = document.getElementById("comments").value; 
-            var letters = '/^[a-zA-Z]+$/';
-            if ((parseInt(x) != (x)) && (y == parseInt(y)) && (a == parseInt(a)) && (b == parseInt(b))) {
-                alert("Wrong Value Entered");
-            } else {
-                var rows = "";
-                var taskName = document.getElementById("taskName").value;
-                var timeIn = document.getElementById("timeIn").value;
-                var timeOut = document.getElementById("timeOut").value;
-                var totalHours = SumHours();
-                var comments = document.getElementById("comments").value;
-                var userId=localStorage.getItem("userId");
-                var attendanceDate=document.getElementById("attendanceDate").value;
-                alert(taskName);
-                rows += "<tr><td>" + userId + "</td><td>" + attendanceDate + "</td><td>" + taskName + "</td><td>" + timeIn + "</td><td>" + timeOut + "</td><td>" +
-                    totalHours + "</td><td>" + comments + "</td></tr>";
-                $(rows).appendTo("#list tbody");
-                
-                var taskObj = {
-                    "inTime": timeIn,
-                    "outTime": timeOut,
-                    "totalHours": totalHours,
-                    "comments": comments,
-                    "name": taskName,
-                    "userId":userId,
-                    "attendanceDate":attendanceDate
-                };
-                const url = "https://product-mock-api.herokuapp.com/timesheetapp/api/v1/tasks";
-                axios.post(url,taskObj).then (res => {
-                    alert("added to server");
-                }).catch(err =>{
-                    alert("error in sending data");
-                });
-                console.log(taskObj);
-
-
-                let taskStr = localStorage.getItem("TASKS");
-                let tasks = taskStr != null ? JSON.parse(taskStr): []; 
-                tasks.push(taskObj);
-
-
-                //store all tasks in localStorage
-                localStorage.setItem("TASKS", JSON.stringify(tasks));
-
-
-
-
-               
-            }
-
-        }
-
-
-        
-
-        function ResetForm() {
-            document.getElementById("list-task").reset();
-        }
-
-        function SumHours() {
-            
-  var timeIn = document.getElementById("timeIn").value ;
-  var timeOut = document.getElementById("timeOut").value ;
-  
-  var diff = 0 ;
-  if (timeIn && timeOut) {
-    timeIn = ConvertToSeconds(timeIn);
-    timeOut = ConvertToSeconds(timeOut);
     
-    diff = Math.abs( timeOut - timeIn ) ;
-    // console.log( 'time difference is : ' + secondsTohhmmss(diff) );
-    console.log(secondsTohhmmss(diff) );
-    return secondsTohhmmss(diff);
-  }
-
-}
-
-function ConvertToSeconds(time) {
-    var splitTime = time.split(":");
-    return splitTime[0] * 3600 + splitTime[1] * 60;
-  }
-
-  function secondsTohhmmss(secs) {
-    var hours = parseInt(secs / 3600);
-    var seconds = parseInt(secs % 3600);
-    var minutes = parseInt(seconds / 60) ;
-    return hours + "hours : " + minutes + "minutes ";
-  }
-    </script>
-    <script src="timesheet_record.js">
-
-    </script>
+    <script src="my_timesheet.js"></script>
 </body>
 
 </html>
