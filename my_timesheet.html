@@ -25,12 +25,16 @@
         <table id="list" class="my-timesheet-class"  summary="Timsheet Data for logged in user">
             <thead>
                 <tr>
+                    <!-- "userId": 0,
+                    "attendanceDate": "2019-12-31T00:00:00.000Z", -->
+                    <th id="my-timesheet-table-head">userId</th>
+                    <th id="my-timesheet-table-head">attendanceDate</th>
                     <th id="my-timesheet-table-head">TaskName</th>
                     <th id="my-timesheet-table-head">timeIn</th>
                     <th id="my-timesheet-table-head">timeOut</th>
                     <th id="my-timesheet-table-head">Total(hours)</th>
                     <th id="my-timesheet-table-head">Comments</th>
-                    <th id="my-timesheet-table-head">Actions</th>
+                    
                 </tr>
             </thead>
             <tbody>
@@ -52,8 +56,11 @@
     <div class="add-task-form">
         <h3 style="color: whitesmoke;">Add Task</h3>
         <form id="list-task">
+            <label for="attendanceDate">Enter Task Name</label><br>
+            <input type="date" name="attendanceDate" id="attendanceDate" required autofocus>
+            <br>
             <label for="taskName">Enter Task Name</label><br>
-            <input type="text" name="taskName" id="taskName" required autofocus>
+            <input type="text" name="taskName" id="taskName" required>
             <br>
             <label for="timeIn">Enter time in</label><br>
             <input type="time" name="timeIn" id="timeIn" required >
@@ -88,10 +95,11 @@
 
 
         function AddData() {
+            // below variable r for checking
             var x = document.getElementById("taskName").value;
             var y = document.getElementById("timeIn").value;
             var a = document.getElementById("timeOut").value;
-            var b = document.getElementById("comments").value;
+            var b = document.getElementById("comments").value; 
             var letters = '/^[a-zA-Z]+$/';
             if ((parseInt(x) != (x)) && (y == parseInt(y)) && (a == parseInt(a)) && (b == parseInt(b))) {
                 alert("Wrong Value Entered");
@@ -102,12 +110,21 @@
                 var timeOut = document.getElementById("timeOut").value;
                 var totalHours = (timeOut - timeIn);
                 var comments = document.getElementById("comments").value;
+                var userId=localStorage.getItem("userId");
+                var attendanceDate=document.getElementById("attendanceDate").value;
+
+                rows += "<tr><td>" + userId + "</td><td>" + attendanceDate + "</td><td>" + taskName + "</td><td>" + timeIn + "</td><td>" + timeOut + "</td><td>" +
+                    totalHours + "</td><td>" + comments + "</td></tr>";
+                $(rows).appendTo("#list tbody");
+                
                 var taskObj = {
                     "inTime": timeIn,
                     "outTime": timeOut,
                     "totalHours": totalHours,
                     "comments": comments,
-                    "taskName": taskName
+                    "taskName": taskName,
+                    "userId":userId,
+                    "attendanceDate":attendanceDate
                 };
                 const url = "https://product-mock-api.herokuapp.com/timesheetapp/api/v1/tasks";
                 axios.post(url,taskObj).then (res => {
@@ -129,9 +146,7 @@
 
 
 
-                rows += "<tr><td>" + taskName + "</td><td>" + timeIn + "</td><td>" + timeOut + "</td><td>" +
-                    totalHours + "</td><td>" + comments + "</td></tr>";
-                $(rows).appendTo("#list tbody");
+               
             }
 
         }
