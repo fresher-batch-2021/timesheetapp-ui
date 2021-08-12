@@ -11,6 +11,18 @@ body {
 
 /* Header page  */
 
+#loggedIn {
+  position: absolute;
+  top: 80%;
+  left: 40%;
+  font-size: 20px;
+  color: #ddd;
+}
+
+#loggedIn a {
+  text-decoration: none;
+  color: palegoldenrod;
+}
 
 .logo-link {
   text-decoration: none;
@@ -352,13 +364,7 @@ top: 30%;
 /* Timesheet record page  */
 
 .table-class {
-  /* background-color: beige;
-  margin-left: 20%;
-  margin-top: 10%;
-  margin-right: 5%;
-  padding: 2%;
-  border-radius: 10px; */
-
+ 
   background-color: beige;
     /* margin-left: 20%; */
     /* margin-top: 10%; */
@@ -393,6 +399,37 @@ top: 30%;
     top: 70%;
     left: 23%;
 
+}
+
+/* All Timesheet record  */
+.all-data {
+
+  background-color: beige;
+    /* margin-left: 20%; */
+    /* margin-top: 10%; */
+    /* margin-right: 5%; */
+    /* padding: 2%; */
+    border-radius: 10px;
+    position: absolute;
+    top: 30%;
+    left: 18%;
+
+}
+
+.all-timesheet-class th,
+.all-timesheet-class td {
+  border: 1px solid #333;
+  border: 1px solid #ddd;
+  padding: 8px;
+
+}
+
+.all-timesheet-class tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.all-timesheet-class tr:hover {
+  background-color: #ddd;
 }
 
 /* Register page */
@@ -468,3 +505,16 @@ input[type=password] {
   text-align: center;
 
 } */
+
+
+/* profile page  */
+
+#profile {
+  position: absolute;
+  top: 40%;
+  left: 30%;
+}
+
+.profile-table td {
+  border: #333 solid;
+}

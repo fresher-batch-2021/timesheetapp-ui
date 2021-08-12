@@ -25,7 +25,9 @@ function AddData() {
         var timeOut = document.getElementById("timeOut").value;
         var totalHours = SumHours();
         var comments = document.getElementById("comments").value;
-        var userId=localStorage.getItem("userId");
+        let userStr = localStorage.getItem("LOGGED_IN_USER");
+        let user = userStr != null ? JSON.parse(userStr):null;
+        var userId=user.id;
         var attendanceDate=document.getElementById("attendanceDate").value;
         let userdata=JSON.parse(localStorage.getItem("LOGGED_IN_USER"));
 
@@ -43,6 +45,7 @@ function AddData() {
             "userId":userId,
             "attendanceDate":attendanceDate
         };
+        console.log(taskObj);
         const url = "https://product-mock-api.herokuapp.com/timesheetapp/api/v1/tasks";
         axios.post(url,taskObj).then (res => {
             alert("added to server");

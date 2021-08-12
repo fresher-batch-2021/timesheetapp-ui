@@ -21,12 +21,18 @@ function login() {
       //login url
       const url="https://product-mock-api.herokuapp.com/timesheetapp/api/v1/auth/login";
 
-      axios.post(url,loginObj).then(res =>{
+      axios.post(url,loginObj).then(res =>{//login in
         //for printing 
         console.log(res);
+        let user = res.data;
         localStorage.setItem("LOGGED_IN_USER",JSON.stringify(res.data));
         alert("login successfull");
-        window.location.href="timesheet.html";
+        if(user.role == "ADMIN"){
+        window.location.href="all_timesheet.html";
+        }
+        else{
+          window.location.href="timesheet.html";
+        }
       }).catch(err =>{
         console.log(err);
         alert("unable to login");
