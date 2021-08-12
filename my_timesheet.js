@@ -16,7 +16,6 @@ function AddData() {
     var y = document.getElementById("timeIn").value;
     var a = document.getElementById("timeOut").value;
     var b = document.getElementById("comments").value; 
-    var letters = '/^[a-zA-Z]+$/';
     if ((parseInt(x) != (x)) && (y == parseInt(y)) && (a == parseInt(a)) && (b == parseInt(b))) {
         alert("Wrong Value Entered");
     } else {

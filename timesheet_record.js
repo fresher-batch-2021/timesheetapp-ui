@@ -37,9 +37,7 @@ function deleteRow(id){
         alert("error in deleting");
     });
     
-}
-
-
+  }
 
 
 

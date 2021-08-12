@@ -20,3 +20,24 @@
 
 
                 </div>
+                <div id="loggedIn">
+
+
+
+                </div>
+
+                <script>
+                        let userStr = localStorage.getItem("LOGGED_IN_USER");
+                        let user = userStr != null ? JSON.parse(userStr):null;
+                        if (user != null){
+                           document.querySelector("#loggedIn").innerHTML = "<a>Welcome " + user.name + "</a> &nbsp;<a href='#' onclick='logout()'> Logout</a>";
+                        }
+                        else{
+                                               
+                        }
+
+                        function logout(){
+                                localStorage.clear();
+                                window.location.href="login.html";
+                        }
+                </script>

@@ -3,7 +3,7 @@ $("#footer").load("footer.html");
 $("#afterGetData").load("afterGetData.html");
 
 
-//const qrcode = window.qrcode;
+
 
 const video = document.createElement("video");
 const canvasElement = document.getElementById("qr-canvas");

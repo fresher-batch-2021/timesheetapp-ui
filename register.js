@@ -32,11 +32,11 @@ function register() {
     case (confirmPassword == null || confirmPassword == "" || confirmPassword.trim() == ""): {
       alert("Password cannot be blank");
       break
-    };
+    }
   case (password != confirmPassword): {
     alert("Confirm Password must be same as Password you entered")
     return false;
-  };
+  }
   // case (email != "agathiyan@gmail.com" || password != "agathi@123"):{alert("Email or password is invalid");break;}
   default: {
     // connecting to server
