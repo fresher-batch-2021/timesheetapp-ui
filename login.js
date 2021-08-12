@@ -26,7 +26,7 @@ function login() {
         console.log(res);
         localStorage.setItem("LOGGED_IN_USER",JSON.stringify(res.data));
         alert("login successfull");
-        // window.location.href="timesheet.html";
+        window.location.href="timesheet.html";
       }).catch(err =>{
         console.log(err);
         alert("unable to login");

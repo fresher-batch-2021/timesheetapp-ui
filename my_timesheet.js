@@ -27,8 +27,10 @@ function AddData() {
         var comments = document.getElementById("comments").value;
         var userId=localStorage.getItem("userId");
         var attendanceDate=document.getElementById("attendanceDate").value;
+        let userdata=JSON.parse(localStorage.getItem("LOGGED_IN_USER"));
+
         alert(taskName);
-        rows += "<tr><td>" + userId + "</td><td>" + attendanceDate + "</td><td>" + taskName + "</td><td>" + timeIn + "</td><td>" + timeOut + "</td><td>" +
+        rows += "<tr><td>" + userdata.id + "</td><td>" + attendanceDate + "</td><td>" + taskName + "</td><td>" + timeIn + "</td><td>" + timeOut + "</td><td>" +
             totalHours + "</td><td>" + comments + "</td></tr>";
         $(rows).appendTo("#list tbody");
         
