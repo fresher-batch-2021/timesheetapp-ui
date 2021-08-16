@@ -46,18 +46,33 @@ function register() {
       "password": password
     };
     //login url
-    const url = "https://product-mock-api.herokuapp.com/timesheetapp/api/v1/auth/register";
+    // const url = "https://product-mock-api.herokuapp.com/timesheetapp/api/v1/auth/register";
 
-    axios.post(url, registerObj).then(res => {
-      //for printing 
-      console.log(res);
-      alert("Registration successfull");
+    // axios.post(url, registerObj).then(res => {
+    //   //for printing 
+    //   console.log(res);
+    //   alert("Registration successfull");
 
+    //   window.location.href = "login.html";
+    // }).catch(err => {
+    //   console.log(err);
+    //   alert("Unable to register");
+
+    // });
+
+    const dbUsername ="apikey-v2-n9i9mmwl3nxoshs878dn76zeb22gvambxdzrr040ezw";
+    const dbPassword = "deea8a2257ba08c5a56fb729475edfa1";
+    const basicAuth = "Basic " + btoa(dbUsername+ ":" + dbPassword);
+
+    const url = "https://50eb74b6-05fa-4bcf-8bd8-696f364f9d42-bluemix.cloudantnosqldb.appdomain.cloud/timesheetappdb_users";
+    axios.post(url, registerObj,{headers:{'Authorization': basicAuth}})
+    .then((res)=>{
+      let data = res.data;
+      alert("Registration Successful");
       window.location.href = "login.html";
     }).catch(err => {
-      console.log(err);
+      console.log(err.response.data);
       alert("Unable to register");
-
     });
   }
   }

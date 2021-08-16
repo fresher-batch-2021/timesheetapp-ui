@@ -27,6 +27,10 @@ function AddData() {
         var comments = document.getElementById("comments").value;
         let userStr = localStorage.getItem("LOGGED_IN_USER");
         let user = userStr != null ? JSON.parse(userStr):null;
+        if(user == null){
+            alert("Please Login");
+            window.location.href="login.html";
+        }
         var userId=user.id;
         var attendanceDate=document.getElementById("attendanceDate").value;
         let userdata=JSON.parse(localStorage.getItem("LOGGED_IN_USER"));

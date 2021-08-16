@@ -14,31 +14,66 @@ function login() {
     // case (email != "agathiyan@gmail.com" || password != "agathi@123"):{alert("Email or password is invalid");break;}
     default:{
       // connecting to server
-      const loginObj={
-        "email":email,
-        "password":password
-      };
-      //login url
-      const url="https://product-mock-api.herokuapp.com/timesheetapp/api/v1/auth/login";
+      // const loginObj={
+      //   "email":email,
+      //   "password":password
+      // }
+      
+      // //login url
+      // const url="https://product-mock-api.herokuapp.com/timesheetapp/api/v1/auth/login";
 
-      axios.post(url,loginObj).then(res =>{//login in
-        //for printing 
-        console.log(res);
-        let user = res.data;
-        localStorage.setItem("LOGGED_IN_USER",JSON.stringify(res.data));
-        alert("login successfull");
-        if(user.role == "ADMIN"){
-        window.location.href="all_timesheet.html";
-        }
-        else{
-          window.location.href="timesheet.html";
-        }
-      }).catch(err =>{
-        console.log(err);
-        alert("unable to login");
+      // axios.post(url,loginObj).then(res =>{//login in
+      //   //for printing 
+      //   console.log(res);
+      //   let user = res.data;
+      //   localStorage.setItem("LOGGED_IN_USER",JSON.stringify(res.data));
+      //   alert("login successfull");
+      //   if(user.role == "ADMIN"){
+      //   window.location.href="all_timesheet.html";
+      //   }
+      //   else{
+      //     window.location.href="timesheet.html";
+      //   }
+      // }).catch(err =>{
+      //   console.log(err);
+      //   alert("unable to login");
 
-      });
-    }
+      // });
+      const dbUsername = 'apikey-v2-n9i9mmwl3nxoshs878dn76zeb22gvambxdzrr040ezw';
+        const dbPassword = 'deea8a2257ba08c5a56fb729475edfa1';
+        const basicAuth = "Basic " + btoa(dbUsername + ":" + dbPassword);
+    const url = "https://50eb74b6-05fa-4bcf-8bd8-696f364f9d42-bluemix.cloudantnosqldb.appdomain.cloud/timesheetappdb_users/_find";
+
+      const loginObj = {
+        selector:{
+            email:email,
+            password:password,
+            
+        },
+        fields:["_id","name","email"],
+    };
+        axios.post(url,loginObj, {headers : { Authorization:basicAuth}}).then(res=>
+            {
+                let data=res.data.docs;
+                console.log(data);
+                if (data.length==0)
+                 {
+                  alert("Invalid login credentials");  
+                }
+                else
+                {
+                    const user= data[0];
+                    localStorage.setItem("LOGGED_IN_USER",JSON.stringify(user));
+                  console.log(data);
+                alert("successfully logged in");
+                window.location.href="timesheet.html";
+            }
+            }).catch(err=>{
+                console.error(err);
+                alert("not login");
+                
+            });
+    };
   }
 
 }
