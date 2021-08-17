@@ -31,12 +31,12 @@ function AddData() {
             alert("Please Login");
             window.location.href="login.html";
         }
-        var userId=user.id;
+        var userId=user._id;
         var attendanceDate=document.getElementById("attendanceDate").value;
         let userdata=JSON.parse(localStorage.getItem("LOGGED_IN_USER"));
 
         alert(taskName);
-        rows += "<tr><td>" + userdata.id + "</td><td>" + attendanceDate + "</td><td>" + taskName + "</td><td>" + timeIn + "</td><td>" + timeOut + "</td><td>" +
+        rows += "<tr><td>" + userdata._id + "</td><td>" + attendanceDate + "</td><td>" + taskName + "</td><td>" + timeIn + "</td><td>" + timeOut + "</td><td>" +
             totalHours + "</td><td>" + comments + "</td></tr>";
         $(rows).appendTo("#list tbody");
         
@@ -49,13 +49,29 @@ function AddData() {
             "userId":userId,
             "attendanceDate":attendanceDate
         };
-        console.log(taskObj);
-        const url = "https://product-mock-api.herokuapp.com/timesheetapp/api/v1/tasks";
-        axios.post(url,taskObj).then (res => {
-            alert("added to server");
-        }).catch(err =>{
-            alert("error in sending data");
+        // console.log(taskObj);
+        // const url = "https://product-mock-api.herokuapp.com/timesheetapp/api/v1/tasks";
+        // axios.post(url,taskObj).then (res => {
+        //     alert("added to server");
+        // }).catch(err =>{
+        //     alert("error in sending data");
+        // });
+
+        const dbUsername ="apikey-v2-n9i9mmwl3nxoshs878dn76zeb22gvambxdzrr040ezw";
+        const dbPassword = "deea8a2257ba08c5a56fb729475edfa1";
+        const basicAuth = "Basic " + btoa(dbUsername+ ":" + dbPassword);
+    
+        const url = "https://50eb74b6-05fa-4bcf-8bd8-696f364f9d42-bluemix.cloudantnosqldb.appdomain.cloud/timesheetappdb_tasks";
+        axios.post(url, taskObj,{headers:{'Authorization': basicAuth}})
+        .then((res)=>{
+          let data = res.data;
+          alert("Task added successfully");
+          
+        }).catch(err => {
+          console.log(err.response.data);
+          alert("Unable to register");
         });
+
         console.log(taskObj);
 
 
