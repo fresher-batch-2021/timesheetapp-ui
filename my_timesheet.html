@@ -26,17 +26,18 @@
     <header id="header">
 
     </header>
+    <!-- <hr> -->
     <section class="my-timesheet-table">
         <table id="list" class="my-timesheet-class">
-            <caption>Timsheet Data for logged in user</caption>
+            <caption>Timesheet Data for logged in user</caption>
             <thead>
                 <tr>
                     
-                    <th id="my-timesheet-table-head">userId</th>
-                    <th id="my-timesheet-table-head">attendanceDate</th>
+                    <th id="my-timesheet-table-head">UserId</th>
+                    <th id="my-timesheet-table-head">AttendanceDate</th>
                     <th id="my-timesheet-table-head">TaskName</th>
-                    <th id="my-timesheet-table-head">timeIn</th>
-                    <th id="my-timesheet-table-head">timeOut</th>
+                    <th id="my-timesheet-table-head">TimeIn</th>
+                    <th id="my-timesheet-table-head">TimeOut</th>
                     <th id="my-timesheet-table-head">Total(hours)</th>
                     <th id="my-timesheet-table-head">Comments</th>
                     
@@ -53,7 +54,7 @@
 
    
     <div class="add-task-form">
-        <h3 style="color: whitesmoke;">Add Task</h3>
+        <h3>Add Task</h3>
         <form id="list-task">
 
             <body onload="validDate()">
@@ -84,6 +85,14 @@
 
         </form>
     </div>
+    <div class="timesheet-nav-division">
+        <a href="timesheet_record.html">
+            <figure class="timesheet-img">
+                <img src="images/record.svg" alt="timesheet record">
+                  <p class="my-timesheet-caption">Records</p>
+            </figure>
+        </a>
+      </div>
 
 
 

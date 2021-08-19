@@ -69,7 +69,7 @@ function AddData() {
           
         }).catch(err => {
           console.log(err.response.data);
-          alert("Unable to register");
+          alert("Unable to Add");
         });
 
         console.log(taskObj);
