@@ -66,7 +66,13 @@ function login() {
                     localStorage.setItem("LOGGED_IN_USER",JSON.stringify(user));
                   console.log(data);
                 alert("successfully logged in");
-                window.location.href="my_timesheet.html";
+                if(user.role == "ADMIN"){
+                   window.location.href="all_timesheet.html";
+                     }
+                     else{
+                      window.location.href="my_timesheet.html";
+                     }
+                // window.location.href="my_timesheet.html";
             }
             }).catch(err=>{
                 console.error(err);

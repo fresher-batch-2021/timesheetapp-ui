@@ -69,7 +69,7 @@ function register() {
     .then((res)=>{
       let data = res.data;
       alert("Registration Successful");
-      window.location.href = "login.html";
+      window.location.href = "home_login.html";
     }).catch(err => {
       console.log(err.response.data);
       alert("Unable to register");

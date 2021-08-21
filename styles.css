@@ -3,12 +3,13 @@
 body {
   /* font-family: 'Balsamiq Sans', cursive; */
   /* font-family: 'Montserrat' ; */
-  font-family: 'Prompt', sans-serif;
+  /* font-family: 'Prompt', sans-serif; */
+  font-family: "Titillium Web";
   /* font-family: 'Open Sans', sans-serif, 'Source Sans Pro', sans-serif; */
   /* background-color: #FFFFFF; */
   background-color: #EFFBFF;
   margin: 0;
-  letter-spacing: .12em;
+  letter-spacing: .1em;
 
 }
 
@@ -17,9 +18,9 @@ body {
 
 #loggedIn {
   position: absolute;
-  top: 50%;
-  left: 62%;
-  font-size: 20px;
+  top: 37%;
+  left: 66%;
+  font-size: 16px;
   color: #0560AF;
   /* color: #ddd; */
 }
@@ -27,6 +28,7 @@ body {
 #loggedIn a {
   text-decoration: none;
   color: #0560AF;
+  padding-bottom: 5%;
   /* color: palegoldenrod; */
 }
 
@@ -37,7 +39,8 @@ body {
 
 .top {
   margin: 0;
-  position: sticky;
+  /* position: sticky; */
+  position: fixed;
   top: 0;
   width: 100%;
   /* height: 50%; */
@@ -53,32 +56,34 @@ body {
   width: 100px;
   height: 100px;
   float: left;
- 
-   
+  clear: right;
+  
 }
 
 .nav-note h1 {
   position: absolute;
-  left: 9%;
+  margin-top: 1%;
+  left: 8%;
   color: #071647;
 }
 
 .nav-note p {
-  line-height: .5em;
+  line-height: 0.5em;
   position: absolute;
-  top: 50%;
-  left: 9.4%;
+  top: 51%;
+  left: 8.1%;
   color: #86CBFF;
 }
 
 
-.home-icon {
+ .home-icon {
   position: absolute;
   right: 12%;
-  top: 40%;
+  top: 35%;
+   vertical-align: middle;
   
-  
-}
+} 
+
 /* .header-icon img[src$=".svg"]:hover{
   color: #006FB1;
 } */
@@ -86,21 +91,165 @@ body {
 .nav-register {
 
   position: absolute;
-  right: 8%;
-  top: 40%;
+  right: 7.7%;
+  top: 35%;
 }
 
 .nav-login {
 
   position: absolute;
   right: 4%;
-  top: 40%;
+  top: 35%;
 }
 
 
 
 
 /* Index page  */
+
+
+
+.features p {
+  font-size: 21px;
+  line-height: 31px;
+  color: #636B7B;
+}
+
+
+
+/* Features page  */
+
+#features-section {
+  text-align: center;
+  margin-top: 10vh;
+  margin-bottom: 60px;
+  border-color: red;
+  /* margin: 2%; */
+  /* background-color: #FFFFFF; */
+  height: 600px;
+ 
+}
+#register-section{
+  background-color: #FFFFFF;
+  height: 600px;
+  display: flex;
+}
+.register-index-img {
+
+  position: absolute;
+  left: 50%;
+  
+
+}
+
+.register-section li{
+  margin-left: 30%;
+ 
+}
+.register-section p {
+  color: #88038B;
+  font-size: 20px;
+  margin-left: 28%;
+}
+
+.features-showcase-section {
+  padding: 2% 2%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: left;
+  color: #07428E;
+
+}
+
+.features-showcase-section-content {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  padding-bottom: 10%;
+}
+
+.features-showcase-one-image {
+  position: absolute;
+  top: 55%;
+  left: 9%;
+}
+
+#login-section {
+  display: flex;
+}
+.login-both-img {
+ margin-left: 20%;
+}
+.login-self-img{
+  margin: auto auto auto 20%;
+}
+.login-statement {
+  /* margin: 20%; */
+  margin-left: 10%;
+  color:#88038B ;
+  font-size: 20px;
+}
+#footer-section {
+  height: 50px;
+  color: #07428E;
+  background-color: #FFFFFF;
+  text-align: center;
+  padding: 3%;
+}
+/* --------------------------------MEDIA QUERIES------------------------------- */
+
+/* Extra small devices (600px and down) */
+@media only screen and (max-width: 600px) {
+
+
+
+  .features-showcase-section {
+      flex-direction: column;
+      margin: 5%;
+  }
+
+}
+
+/* Small devices (600px and up) */
+@media only screen and (min-width: 600px) {
+  
+
+  .features-showcase-section {
+      flex-direction: column;
+      margin: 5%;
+  }
+
+
+}
+
+/* Medium devices (768px and up) */
+@media only screen and (min-width: 768px) {
+  
+
+}
+
+/* Large devices (992px and up) */
+@media only screen and (min-width: 992px) {
+  
+
+  .features-showcase-section {
+      padding: 2% 9%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
+      text-align: left;
+  }
+
+}
+
+/* Extra large devices (1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}
+
+/* Home log in page  */
 
 #navigate-apps h2 {
 
@@ -274,39 +423,63 @@ body {
   color: #581B80;
   font-weight: 700;
 }
-
-.task-button1,
-.task-button2,
-.task-button3 {
-
-  padding: 2%;
-
+.add-task-form h3 {
+  margin-top: 0;
 }
+
+/* work */
+.btn-grad {
+  background-image: linear-gradient(to right, #77A1D3 0%, #79CBCA  51%, #77A1D3  100%)}
+.btn-grad {
+   margin: 10px;
+   padding: 15px 45px;
+   text-align: center;
+   text-transform: uppercase;
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: white;            
+   box-shadow: 0 0 20px #eee;
+   border-radius: 10px;
+   display: block;
+ }
+
+ .btn-grad:hover {
+   background-position: right center; /* change the direction of the change here */
+   color: #fff;
+   text-decoration: none;
+ }
+/* ------------------------ */
 
 .task-button1 {
   margin-top: 3%;
   color: #FFFFFF;
   font-size: 14px;
   font-family: 'Roboto', sans-serif;
-  background-color: #03a9f4;
-  padding: 12px 15px;
+  padding: 12px 1px;
   width: 97%;
   border-radius: 2px;
   border: none;
-  /* margin-left: 40%; */
+  background-image: linear-gradient(to right, #840388 0%, #d808c3 51%, #840388 100% );
+  transition: 0.4s;
+  background-size: 200% auto;
 }
+
 
 .task-button2 {
   margin-top: 3%;
-  margin-left: 1%;
   color: #FFFFFF;
   font-size: 14px;
   font-family: 'Roboto', sans-serif;
-  background-color: #03a9f4;
-  padding: 12px 15px;
+  padding: 12px 1px;
   width: 97%;
   border-radius: 2px;
   border: none;
+  background-image: linear-gradient(to right, #840388 0%, #d808c3 51%, #840388 100% );
+  transition: 0.4s;
+  background-size: 200% auto;
+}
+.task-button1:hover,.task-button2:hover {
+  background-position: right center;
 }
 
 .my_timesheet_div {
@@ -448,35 +621,43 @@ body {
 }
 
 /* All Timesheet record  */
-.all-data {
 
-  background-color: beige;
-  /* margin-left: 20%; */
-  /* margin-top: 10%; */
-  /* margin-right: 5%; */
-  /* padding: 2%; */
-  border-radius: 10px;
+.all-data{
+
+  background-color: #F8F5F1;
+  opacity: 100;
   position: absolute;
   top: 30%;
-  left: 1%;
+  left: 5%;
+  border-radius: 10px;
 
 }
 
-.all-timesheet-class th,
-.all-timesheet-class td {
+.all-data th,
+.all-data td {
   border: 1px solid #333;
   border: 1px solid #ddd;
   padding: 8px;
 
 }
 
-.all-timesheet-class tr:nth-child(even) {
-  background-color: #f2f2f2;
+.all-data tr:nth-child(even) {
+  background-color: #F3F7F9;
 }
 
-.all-timesheet-class tr:hover {
+.all-data tr:hover {
   background-color: #ddd;
 }
+
+.all-data th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #006FB1;
+  color: #FFFFFF;
+}
+
+
 
 /* Register page */
 
@@ -491,18 +672,20 @@ body {
 
 .register {
   width: 23%;
-  height: 450px;
+  height: 465px;
   background-color: #FFFFFF;
   justify-content: center;
   display: block;
   align-content: center;
-  margin: 2% auto auto auto;
+  margin: 10% auto auto auto;
   padding: 10px 30px 30px 30px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
   border-radius: 2px;
 }
 .section-register-title{
-  padding-left: 1px;
+  margin-top: 0;
+  padding-left: 0.5px;
+  color: #580373;
 }
 #registerName,
 #registerEmail,
@@ -528,14 +711,20 @@ input[type=text]:focus {
   color: #FFFFFF;
   font-size: 14px;
   font-family: 'Roboto', sans-serif;
-  background-color: #03a9f4;
   padding: 12px 15px;
   width: 97%;
   border-radius: 2px;
   border: none;
-  /* margin-top: 0; */
+  background-image: linear-gradient(to right, #840388 0%, #d808c3 51%, #840388 100% );
+  transition: 0.4s;
+  background-size: 200% auto;
+
 }
 
+.sign-up-create-button:hover {
+ 
+  background-position: right center;
+}
 /* Login page */
 
 
@@ -556,6 +745,7 @@ input[type=text]:focus {
 
 .section-login-title {
   padding-left: 4%;
+  color: #580373;
 }
 
 .login label {
@@ -595,18 +785,21 @@ input[type=text]:focus {
   text-transform: uppercase;
   border: none;
   border-radius: 2px;
-  background-color: #03A9F4;
   cursor: pointer;
   color: white;
   font-weight: bold;
   transition: 0.4s;
+  font-size: 16px;
+  background-image: linear-gradient(to right, #840388 0%, #d808c3 51%, #840388 100% );
+  transition: 0.4s;
+  background-size: 200% auto;
 }
 
 .loginCard-btn:hover {
-  background-color: #038FCE;
-}
 
-
+  background-position: right center;
+ }
+ 
 /* Footer Section */
 /* 
 .footer {

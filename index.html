@@ -3,56 +3,101 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | Timesheet Reminder</title>
+    <title> Timiefy | Timesheet</title>
 
+   
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+
 
     <link rel="icon" href="images/favicon.ico">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <header id="header">
-        <!-- append -->
-    </header>
-<!-- <hr> -->
-
-    <section id="navigate-apps">
-        <h2>Welcome to <span>Timesheet Reminder</span> </h2>
-        <div class="navigate-line"></div>
-        <div class="navigate-inside">
-            <h3>Login via..</h3>
-            <div class="navigate-image"> <a href="qrcode.html">
-                    <figure>
-                        <img src="images/qrcode.png" alt="qr code">
-                        <figcaption class="nav-qr-img">QR code</figcaption>
-                    </figure>
-                </a></div>
-            <div class="navigate-image"><a href="login.html">
-                    <figure>
-                        <img src="images/mail.png" alt="">
-                        <figcaption class="nav-qr-img">Email</figcaption>
-
-                    </figure>
-                </a></div>
+    
+    <header id="header"></header>
 
 
+
+    <section id="features-section" class="features">
+
+        <div class="features-showcase-section">
+            <div class="features-showcase-section-content">
+                <p>Activity</p> <br>
+                <li><span>Record task</span></li>
+                <li><span>Observe employee hours effort</span></li>
+                <li><span>See current activity</span></li>
+                <li><span>See who worked on what</span></li>
+            </div>
+            
+            
+        </div>
+      
+        <div class="features-showcase-one-image">
+            <img src="images/timesheet-self.PNG" alt="feature image">
+        </div>
+    </section> 
+    
+   
+    <section  id="register-section">
+        <div class="register-section">
+            <div class="register-inside">
+                <p>Register</p>
+                <br>
+                   <li><span>Register with Mail id</span></li>
+                   <li><span>If you have QR code, You can login with QR scanner  </span></li>
+            </div>
+           
+               <div>
+            <figure>
+                <img class="register-index-img"src="images/register-index.PNG" alt="">
+            </figure></div>
+        </div>
+     </section>
+        <!-- <hr> -->
+        <p class="login-statement">Log in with QR and Mail</p>
+
+        <section id="login-section">
+        <div>
+           
+            <figure>
+                <img class="login-both-img"src="images/login-both.PNG" alt="">
+            </figure>
 
         </div>
+        <div>
+            <figure>
+                <img class="login-self-img" src="images/login-self.PNG" alt="">
+            </figure>
+        </div>
+       
+    </section>
+    <section id="footer-section">
+        <div>
+            <p>@Timiefy | Timesheet 2021</p>
+
+        </div>
+        <a href="index.html">
+            <figure>
+                <img src="images/arrow-up.svg" alt="">
+            </figure>
+        </a>
+       
 
     </section>
 
-    <footer id="footer">
-        <!-- append -->
-    </footer>
+
 
     <script src="https://code.jquery.com/jquery-3.6.0.js"
-        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script src="index.js" charset="utf-8"></script>
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script>
+    
+$("#header").load("header.html");
+</script>
+
 </body>
 
 </html>
