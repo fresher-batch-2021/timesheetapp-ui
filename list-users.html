@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Users</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://project-themes.netlify.app/boot-theme/style.css">
+
+    <!-- axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <header id="header">
+        <!--append-->
+    </header>
+    <section class="list-users-admin">
+
+
+        <h2>List Users</h2>
+
+
+        <table class="table table-bordered table-hover">
+            <caption><strong> Users List</strong></caption>
+            <thead>
+                <tr>
+                    <th id="sno">S.No</th>
+                    <th id="email">Email</th>
+                    <th id="name">User Name</th>
+                    <th id="role">Role</th>
+                    <th id="gender">Gender</th>
+                    <th id="mobile">Mobile</th>
+                </tr>
+            </thead>
+            <tbody id="list-user-data">
+
+            </tbody>
+        </table>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <script>
+        $("#header").load("header.html");
+    </script>
+
+</body>
+
+</html>

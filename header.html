@@ -2,49 +2,52 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-        <div class="top">
-                <a class="logo-link" href="index.html">
-                        <img class="top-img" src="images/logo1.svg" alt="brand logo">
-                        <div class="nav-note">
-                                <h1>Timesheet</h1>
-                                <p>a solution for your oblivion...</p>
-                        </div>
-                </a>
-                <div class="header-icon"> 
-                <a class="home-icon" href="index.html"><img src="images/home.svg" alt="home image"></a>
-                <div class="nav-register">
-                        <a href="register.html"><img src="images/register.svg" alt="Register image"></a>
-                </div>
-                <div class="nav-login">
-                        
-
-                        <a href="home_login.html"><img src="images/login.svg" alt="login image"></a>
+<link rel="stylesheet" href="https://project-themes.netlify.app/boot-theme/style.css">
+<div class="top">
+    <a class="logo-link" href="index.html">
+        <img class="top-img" src="images/logo1.svg" alt="brand logo">
+        <div class="nav-note">
+            <h1>Timesheet</h1>
+            <p>a solution for your oblivion...</p>
+        </div>
+    </a>
+    <div class="header-icon">
+        <a class="home-icon" href="index.html"><img src="images/home.svg" alt="home image"></a>
+        <div class="nav-register">
+            <a href="register.html"><img src="images/register.svg" alt="Register image"></a>
+        </div>
+        <div class="nav-login">
 
 
-                </div></div>
-                
-                <div id="loggedIn">
+            <a href="home_login.html"><img src="images/login.svg" alt="login image"></a>
+
+
+        </div>
+    </div>
+
+    <div id="loggedIn">
 
 
 
-                </div>
-                
+    </div>
 
-                <script>
-                        function checkLogin() {
-                        let userStr = localStorage.getItem("LOGGED_IN_USER");
-                        let user = userStr != null ? JSON.parse(userStr):null;
-                        if (user != null){
-                           document.querySelector("#loggedIn").innerHTML = "Welcome <a href = 'profile.html'>" + user.name + "</a>  &nbsp;<a href='#' onclick='logout()'> Logout</a>";
-                        }
-                        // else{
-                                               
-                        // }
 
-                        }
-                        checkLogin();
-                        function logout(){
-                                localStorage.removeItem("LOGGED_IN_USER");
-                                window.location.href="login.html";
-                        }
-                </script>
+    <script>
+        function checkLogin() {
+            let userStr = localStorage.getItem("LOGGED_IN_USER");
+            let user = userStr != null ? JSON.parse(userStr) : null;
+            if (user != null) {
+                document.querySelector("#loggedIn").innerHTML = "Welcome <a href = 'profile.html'>" + user.name + "</a>  &nbsp;<a href='#' onclick='logout()'> Logout</a>";
+            }
+            // else{
+
+            // }
+
+        }
+        checkLogin();
+
+        function logout() {
+            localStorage.removeItem("LOGGED_IN_USER");
+            window.location.href = "login.html";
+        }
+    </script>

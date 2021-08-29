@@ -43,6 +43,7 @@ function deleteRow(id,rev){
         const basicAuth = "Basic " + btoa(dbUsername+ ":" + dbPassword);
     //const url =`https://product-mock-api.herokuapp.com/timesheetapp/api/v1/tasks/${id}?rev=${rev}`;
     const url ="https://50eb74b6-05fa-4bcf-8bd8-696f364f9d42-bluemix.cloudantnosqldb.appdomain.cloud/timesheetappdb_tasks/${id}?rev=${rev}`;"
+    console.log(url);
     axios.delete(url,{headers:{'Authorization': basicAuth}}).then(res => {
         alert("deleted succesfully");
         window.location.href="timesheet_record.html";

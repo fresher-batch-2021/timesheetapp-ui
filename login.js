@@ -50,12 +50,12 @@ function login() {
             password:password,
             
         },
-        fields:["_id","name","email"],
+        fields:["_id","name","email","role"],
     };
         axios.post(url,loginObj, {headers : { Authorization:basicAuth}}).then(res=>
             {
                 let data=res.data.docs;
-                console.log(data);
+                // console.log(data);
                 if (data.length==0)
                  {
                   alert("Invalid login credentials");  
@@ -64,7 +64,7 @@ function login() {
                 {
                     const user= data[0];
                     localStorage.setItem("LOGGED_IN_USER",JSON.stringify(user));
-                  console.log(data);
+                  console.log(user);
                 alert("successfully logged in");
                 if(user.role == "ADMIN"){
                    window.location.href="all_timesheet.html";
