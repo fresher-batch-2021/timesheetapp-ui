@@ -13,19 +13,36 @@
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
     <link rel="icon" href="images/favicon.ico">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://project-themes.netlify.app/boot-theme/style.css">
 
- <!-- axios -->
- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </head>
 
 <body>
-    
-    
+
+
     <header id="header">
 
     </header>
-  
+    <div class="search-container">
+        <div class="form-container search-section">
+            <form>
+                <label for="search-by-taskname">Search by Task Name</label>
+                <input class="searchBox form-control " type="text " id="searchBox" placeholder="Search For Task Name" onkeyup="searchName()" autocomplete="off">
+            </form>
+        </div>
+        <!-- <div class="form-container search-date-section">
+            <form>
+                <label for="search-by-date">Search by Date</label>
+                <input class="searchBox form-control" type="date" id="searchBoxDate" placeholder="Search For Date" onkeyup="searchName()" autocomplete="off">
+            </form>
+        </div> -->
+    </div>
+
+
+
     <div id="afterGetData">
         <!-- append -->
         <section class="table-class">
@@ -51,17 +68,37 @@
 
     </div>
 
-    
 
-    <script src="https://code.jquery.com/jquery-3.6.0.js"
-        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="timesheet_record.js" charset="utf-8"></script>
 
-   
+
 
     <footer id="footer">
         <!-- append -->
-    </footer> 
+    </footer>
+
+    <script>
+        function searchName() {
+            let searchName = document.getElementById("searchBox").value;
+            let myTable = document.getElementById("table-to");
+            let tableRow = myTable.getElementsByTagName("tr");
+            for (var i = 0; i < tableRow.length; i++) {
+                let tableDatas = tableRow[i].getElementsByTagName("td")[2];
+
+                if (tableDatas) {
+                    let textValue = tableDatas.textContent.toLowerCase() || tableDatas.innerText.toLowerCase();
+                    if (textValue.indexOf(searchName) > -1) {
+                        tableRow[i].style.display = "";
+                    } else {
+                        tableRow[i].style.display = "none";
+                    }
+                }
+            }
+
+        }
+    </script>
 </body>
 
 </html>

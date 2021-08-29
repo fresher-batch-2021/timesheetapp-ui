@@ -551,7 +551,7 @@ body {
     background-color: #F8F5F1;
     border-radius: 10px;
     position: absolute;
-    top: 30%;
+    top: 35%;
     left: 4%;
 }
 
@@ -580,6 +580,21 @@ body {
     top: 70%;
     left: 23%;
 }
+
+.search-container {
+    display: flex;
+}
+
+.search-section {
+    margin-top: 8%;
+    margin-left: 5%;
+}
+
+
+/* .search-date-section {
+    margin-top: 8%;
+    margin-left: 1%;
+} */
 
 
 /* All Timesheet record  */
