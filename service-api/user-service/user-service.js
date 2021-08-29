@@ -8,20 +8,21 @@ class UserService {
      * @param {string} password
      */
     static login(email, password) {
-        let url ="https://50eb74b6-05fa-4bcf-8bd8-696f364f9d42-bluemix.cloudantnosqldb.appdomain.cloud/timesheetappdb_users/_find";
+        let url = "https://50eb74b6-05fa-4bcf-8bd8-696f364f9d42-bluemix.cloudantnosqldb.appdomain.cloud/timesheetappdb_users/_find";
 
         const loginObj = {
             selector: {
-              email: email,
-              password: password,
-    
+                email: email,
+                password: password,
+
             },
             fields: ["_id", "name", "email"],
-          };
-          return axios.post(url, loginObj, {
+        };
+        return axios.post(url, loginObj, {
             headers: {
-              Authorization: basicAuth
-            }});
+                Authorization: basicAuth
+            }
+        });
     }
 
     /**
@@ -29,12 +30,20 @@ class UserService {
      * @params {*} registerObj
      * @returns
      */
-    static register(registerObj){
+    static register(registerObj) {
         const url = "https://50eb74b6-05fa-4bcf-8bd8-696f364f9d42-bluemix.cloudantnosqldb.appdomain.cloud/timesheetappdb_users";
-      axios.post(url, registerObj, {
-          headers: {
-            'Authorization': basicAuth
-          }
+        axios.post(url, registerObj, {
+            headers: {
+                'Authorization': basicAuth
+            }
         });
+    }
+
+    static getUsers() {
+
+        const url = "https://50eb74b6-05fa-4bcf-8bd8-696f364f9d42-bluemix.cloudantnosqldb.appdomain.cloud/timesheetappdb_users/_all_docs?include_docs=true";
+
+
+        return axios.get(url, { headers: { Authorization: basicAuth } });
     }
 }

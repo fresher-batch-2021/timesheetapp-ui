@@ -31,13 +31,12 @@
         <table class="table table-bordered table-hover">
             <caption><strong> Users List</strong></caption>
             <thead>
-                <tr>
+                <tr class="table-primary">
                     <th id="sno">S.No</th>
                     <th id="email">Email</th>
                     <th id="name">User Name</th>
                     <th id="role">Role</th>
-                    <th id="gender">Gender</th>
-                    <th id="mobile">Mobile</th>
+
                 </tr>
             </thead>
             <tbody id="list-user-data">
@@ -49,6 +48,42 @@
 
     <script>
         $("#header").load("header.html");
+    </script>
+    <script src="service-api/user-service/user-service.js"></script>
+    <script>
+        function listData() {
+            // alert("Train Listed successful 11");
+            var content = "";
+
+            UserService.getUsers().then(res => {
+                let data = res.data.rows;
+                let user_list = data.map(obj => obj.doc);
+                let users = user_list.filter(obj => obj.role !== 'admin');
+
+                // alert("Train Listed successful");
+                console.log(user_list);
+                // alert("yes");
+                //localStorage.setItem("Added_Train",JSON.stringify(res.data));
+                //alert("added in local storage");
+                let i = 0;
+                for (let listUser of users) {
+                    i = i + 1;
+
+
+
+                    content = content + "<tr><td>" + i + "</td>" + "<td>" + listUser.email + "</td>" + "<td>" + listUser.name + "</td>" + "<td>" + listUser.role + "</td></tr>";
+
+
+                    document.querySelector("#list-user-data").innerHTML = content;
+                }
+                // window.location.href="list.html";
+            }).catch(err => {
+                console.log(err.response.data);
+                alert("Register failed");
+            });
+
+        }
+        listData();
     </script>
 
 </body>
