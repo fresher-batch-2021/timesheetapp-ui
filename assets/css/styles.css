@@ -631,8 +631,8 @@ body {
     background-color: #F8F5F1;
     opacity: 100;
     position: absolute;
-    top: 30%;
-    left: 5%;
+    top: 35%;
+    left: 1%;
     border-radius: 10px;
 }
 
@@ -739,8 +739,12 @@ input[type=text]:focus {
     background-color: white;
 }
 
+.section-header {
+    width: 25%;
+}
+
 .section-login-title {
-    padding-left: 4%;
+    padding-left: 5%;
     color: #580373;
 }
 
