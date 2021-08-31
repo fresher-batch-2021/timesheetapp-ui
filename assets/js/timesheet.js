@@ -1,7 +1,7 @@
-$("#header").load("header.html");
+$("#header").load("assets/partial/header.html");
 $("#footer").load("footer.html");
-$(document).ready(function () {
-    $('#timesheet a').click(function (e) {
+$(document).ready(function() {
+    $('#timesheet a').click(function(e) {
         e.preventDefault();
         $('#content').load($(this).attr('href'));
     });

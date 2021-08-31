@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Timesheet</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://project-themes.netlify.app/boot-theme/style.css">
+
+    <!-- axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+
+<body>
+    <header id="header"></header>
+    <main>
+
+
+        <div class="update-task-section">
+            <!-- add-task-from -->
+            <h3>Update Task</h3>
+            <form id="list-task" onsubmit="updateTask();">
+
+
+                <label for="attendanceDate">Enter Attendance Date</label><br>
+                <input type="date" name="attendanceDate" id="attendanceDate" required autofocus>
+                <br>
+
+                <input class="form-control" type="hidden" name="_id" id="_id" required>
+                <input class="form-control" type="hidden" name="_rev" id="_rev" required>
+                <input class="form-control" type="hidden" name="userId" id="userId" required>
+
+
+                <label for="taskName">Enter Task Name</label><br>
+                <input type="text" name="taskName" id="taskName" required>
+                <br>
+                <label for="timeIn">Enter time in</label><br>
+                <input type="time" name="timeIn" id="timeIn" required>
+                <br>
+                <label for="timeOut">Enter time out</label><br>
+                <input type="time" name="timeOut" id="timeOut" required>
+                <br>
+                <label for="comments">Enter comments</label><br>
+                <input type="text" name="comments" id="comments" required>
+                <br>
+
+
+                <button class="task-button2" id="button" type="button" name="button" onclick="updateTask();">Update</button>
+
+                <!-- <button class="task-button1" id="button" type="button" name="button" value=" Reset " onclick="ResetForm()">Reset</button> -->
+
+            </form>
+        </div>
+
+    </main>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+        $("#header").load("assets/partial/header.html");
+    </script>
+
+
+    <script src="service-api/user-service/task-service.js"></script>
+    <script src="assets/js/update-task.js"></script>
+
+
+
+</body>
+
+</html>

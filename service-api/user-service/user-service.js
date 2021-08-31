@@ -13,14 +13,14 @@ class UserService {
         const loginObj = {
             selector: {
                 email: email,
-                password: password,
+                password: password
 
             },
-            fields: ["_id", "name", "email"],
+            fields: ["_id", "name", "email", "role"],
         };
         return axios.post(url, loginObj, {
             headers: {
-                Authorization: basicAuth
+                'Authorization': basicAuth
             }
         });
     }
@@ -32,7 +32,7 @@ class UserService {
      */
     static register(registerObj) {
         const url = "https://50eb74b6-05fa-4bcf-8bd8-696f364f9d42-bluemix.cloudantnosqldb.appdomain.cloud/timesheetappdb_users";
-        axios.post(url, registerObj, {
+        return axios.post(url, registerObj, {
             headers: {
                 'Authorization': basicAuth
             }

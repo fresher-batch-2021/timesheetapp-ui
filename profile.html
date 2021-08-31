@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,11 +8,12 @@
     <title>Profile</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
+
 <body>
     <header id="header"> </header>
 
@@ -28,23 +30,23 @@
                     <td id="email"></td>
                 </tr>
             </tbody>
-            
+
         </table>
     </section>
-    <script src="https://code.jquery.com/jquery-3.6.0.js"
-    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
-    <script src= "index.js"></script>
+    <script src="index.js"></script>
     <script>
         let userStr = localStorage.getItem("LOGGED_IN_USER");
-                        let user = userStr != null ? JSON.parse(userStr):null;
-                        if (user != null){
-                           document.querySelector("#name").innerHTML = user.name;
-                           document.querySelector("#email").innerHTML = user.email;
-                        }
-                        // else{
-                                               
-                        // }
+        let user = userStr != null ? JSON.parse(userStr) : null;
+        if (user != null) {
+            document.querySelector("#name").innerHTML = user.name;
+            document.querySelector("#email").innerHTML = user.email;
+        }
+        // else{
+
+        // }
     </script>
 </body>
+
 </html>

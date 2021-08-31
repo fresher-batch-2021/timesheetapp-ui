@@ -2,91 +2,90 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <title>QR Code | Timesheet Reminder</title>
+    <title>QR Code | Timesheet Reminder</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
 
-  <link rel="icon" href="images/favicon.ico">
-  <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/images/favicon.ico">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
-  <header id="header">
-    <!-- append -->
-  </header>
+    <header id="header">
+        <!-- append -->
+    </header>
 
 
-  <section class="content wrap">
+    <section class="content wrap">
 
-    <div>
-      <h1>Barcode scanner</h1>
-      <p><strong>Instructions:</strong></p>
-      <ul>
-        <li>Click the barcode to view <br> and point your screen towards the camera.</li>
-      </ul>
-      <p><strong>Important notes:</strong></p>
-      <ul>
-        <li>Make sure to allow the browser to access your camera.</li>
+        <div>
+            <h1>Barcode scanner</h1>
+            <p><strong>Instructions:</strong></p>
+            <ul>
+                <li>Click the barcode to view <br> and point your screen towards the camera.</li>
+            </ul>
+            <p><strong>Important notes:</strong></p>
+            <ul>
+                <li>Make sure to allow the browser to access your camera.</li>
 
-      </ul>
-    </div>
-  </section>
-  <section class="qr-class">
-    <aside>
-      <div>
+            </ul>
+        </div>
+    </section>
+    <section class="qr-class">
+        <aside>
+            <div>
 
-        <a id="btn-scan-qr">
-          <img src="images/qr.png" alt="qr image">
-        </a>
+                <a id="btn-scan-qr">
+                    <img src="assets/images/qr.png" alt="qr image">
+                </a>
 
-        <canvas hidden="" id="qr-canvas"></canvas>
+                <canvas hidden="" id="qr-canvas"></canvas>
 
-      </div>
-    </aside>
-  </section>
-  <section id="table-id">
-    <div class="table-align">
-     
-      <table>
-        <caption>User data for qr scan</caption>
-        <thead>
-          <th id="table-align-head">S NO</th>
-          <th id="table-align-head">Name</th>
-          <th id="table-align-head">Employee_Id</th>
-          <th id="table-align-head">Email</th>
-          <th id="table-align-head">Time_in</th>
-          <th id="table-align-head">Time_out</th>
-        </thead>
-        <tbody id="qr-result" hidden=""></tbody>
+            </div>
+        </aside>
+    </section>
+    <section id="table-id">
+        <div class="table-align">
 
-      </table>
-      <p id="outputData"></p>
-    </div>
+            <table>
+                <caption>User data for qr scan</caption>
+                <thead>
+                    <th id="table-align-head">S NO</th>
+                    <th id="table-align-head">Name</th>
+                    <th id="table-align-head">Employee_Id</th>
+                    <th id="table-align-head">Email</th>
+                    <th id="table-align-head">Time_in</th>
+                    <th id="table-align-head">Time_out</th>
+                </thead>
+                <tbody id="qr-result" hidden=""></tbody>
 
-
-    </div>
+            </table>
+            <p id="outputData"></p>
+        </div>
 
 
-
-  </section>
+        </div>
 
 
 
-  <footer id="footer">
-    <!-- append -->
-  </footer>
+    </section>
 
 
-  <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-    crossorigin="anonymous"></script>
-  <script src="qrcode.js" charset="utf-8"></script>
+
+    <footer id="footer">
+        <!-- append -->
+    </footer>
+
+
+    <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="assets/js/qrcode.js" charset="utf-8"></script>
 
 </body>
 

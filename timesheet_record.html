@@ -11,8 +11,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
-    <link rel="icon" href="images/favicon.ico">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/images/favicon.ico">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="https://project-themes.netlify.app/boot-theme/style.css">
 
     <!-- axios -->
@@ -33,12 +33,12 @@
                 <input class="searchBox form-control " type="text " id="searchBox" placeholder="Search For Task Name" onkeyup="searchName()" autocomplete="off">
             </form>
         </div>
-        <!-- <div class="form-container search-date-section">
+        <div class="form-container search-date-section">
             <form>
                 <label for="search-by-date">Search by Date</label>
-                <input class="searchBox form-control" type="date" id="searchBoxDate" placeholder="Search For Date" onkeyup="searchName()" autocomplete="off">
+                <input class="searchBox form-control" type="type" id="searchBoxDate" placeholder="Search For Date" onkeyup="searchName()" autocomplete="off">
             </form>
-        </div> -->
+        </div>
     </div>
 
 
@@ -49,16 +49,16 @@
             <table id="table-to" class="record-table" style="border:1px solid black">
                 <caption>Timesheet Listed Data</caption>
                 <thead>
-                    <tr>
-                        <th id="table-class-head">User Id</th>
-                        <th id="table-class-head">Attendance Date</th>
-                        <th id="table-class-head">TaskName</th>
-                        <th id="table-class-head">Time_in</th>
-                        <th id="table-class-head">Time_out</th>
-                        <th id="table-class-head">Total(hours)</th>
-                        <th id="table-class-head">Comments</th>
-                        <th id="table-class-head">Actions</th>
-                    </tr>
+
+                    <th id="table-class-head">User Id</th>
+                    <th id="table-class-head">Attendance Date</th>
+                    <th id="table-class-head">TaskName</th>
+                    <th id="table-class-head">Time_in</th>
+                    <th id="table-class-head">Time_out</th>
+                    <th id="table-class-head">Total(hours)</th>
+                    <th id="table-class-head">Comments</th>
+                    <th id="table-class-head">Actions</th>
+
                 </thead>
                 <tbody id="table-to-body">
 
@@ -71,7 +71,7 @@
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script src="timesheet_record.js" charset="utf-8"></script>
+    <script src="assets/js/timesheet_record.js" charset="utf-8"></script>
 
 
 
@@ -98,6 +98,18 @@
             }
 
         }
+    </script>
+    <script>
+        var $rows = $('#table-to tr');
+        $('#searchBoxDate').keyup(function() {
+            var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+
+            $rows.show().filter(function() {
+                var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+                return !~text.indexOf(val);
+            }).hide();
+
+        });
     </script>
 </body>
 
