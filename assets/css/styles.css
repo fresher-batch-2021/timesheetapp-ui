@@ -239,33 +239,46 @@ body {
 
 #navigate-apps h2 {
     text-align: center;
-    position: absolute;
+    margin-top: 10%;
+    /* position: absolute;
     top: 20%;
-    left: 35%;
+    left: 35%; */
     color: #071647;
 }
 
 .navigate-line {
     background-color: #CAEDFA;
-    /* margin: 2% 30%; */
-    /* padding: 1%; */
+    margin: 2% 30%;
+    padding: 2%;
     color: #fff;
     opacity: .4;
     border-radius: 10px;
     width: 500px;
     height: 300px;
-    position: absolute;
+    /* position: absolute;
     top: 40%;
-    left: 32%;
+    left: 32%; */
 }
 
-.navigate-image {
+.navigate-first-image {
+    z-index: 2;
+    background-color: #75C2FA;
+    color: #fff;
+    transition: background-color 1s;
+    border-radius: 4px;
+    display: inline-block;
+    margin: 10px 100px 50px 10px;
+    padding: 10px;
+}
+
+.navigate-second-image {
     display: inline-block;
     z-index: 2;
     background-color: #75C2FA;
     color: #fff;
     transition: background-color 1s;
-    border-radius: 10px;
+    border-radius: 4px;
+    padding: 10px;
 }
 
 .navigate-inside a {
@@ -279,12 +292,13 @@ body {
     top: 40%;
 }
 
-.navigate-image:hover {
+.navigate-first-image:hover,
+.navigate-second-image:hover {
     background-color: #2D1269;
 }
 
-.navigate-image:focus,
-.navigate-image:active {
+.navigate-first-image:focus,
+.navigate-first-image:active {
     background-color: black;
     transition: none;
 }
@@ -387,6 +401,20 @@ body {
 .add-task-form label {
     color: #581B80;
     font-weight: 700;
+}
+
+.add-task-form form input[type=text] {
+    padding-right: 25%;
+}
+
+.add-task-form form input[type=time] {
+    padding-right: 30%;
+    padding-left: 31%;
+}
+
+.add-task-form form input[type=date] {
+    padding-right: 15%;
+    padding-left: 13%;
 }
 
 .add-task-form h3 {
@@ -616,6 +644,20 @@ body {
     font-weight: 700;
 }
 
+.update-task-section form input[type=text] {
+    padding-right: 25%;
+}
+
+.update-task-section form input[type=time] {
+    padding-right: 30%;
+    padding-left: 31%;
+}
+
+.update-task-section form input[type=date] {
+    padding-right: 6%;
+    padding-left: 13%;
+}
+
 .update-task-section h3 {
     margin-top: 0;
 }
@@ -675,10 +717,14 @@ body {
     justify-content: center;
     display: block;
     align-content: center;
-    margin: 10% auto auto auto;
-    padding: 10px 30px 30px 30px;
+    margin: 8% auto auto auto;
+    padding: 10px 30px 60px 30px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
     border-radius: 2px;
+}
+
+.register-box {
+    margin-top: 11%;
 }
 
 .section-register-title {
@@ -746,6 +792,10 @@ input[type=text]:focus {
 .section-login-title {
     padding-left: 5%;
     color: #580373;
+}
+
+.login-box {
+    margin-top: 10%;
 }
 
 .login label {
