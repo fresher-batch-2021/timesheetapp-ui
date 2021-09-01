@@ -11,26 +11,53 @@ function register() {
     const password = document.querySelector("#registerPassword").value;
     const confirmPassword = document.querySelector("#registerConfirmPassword").value;
 
-    RegisterValidator.validate(name, email, password, confirmPassword)
+    try {
 
-    const registerObj = {
-        "name": name,
-        "email": email,
-        "password": password
-    };
 
-    console.log(registerObj);
-    UserService.register(registerObj).then(res => {
-        let data = res.data;
-        console.log(data);
-        alert("Registration Successful");
-        window.location.href = "home_login.html";
 
-    })
 
-    .catch(err => {
-        console.log(err.response.data);
-        alert("Unable to Register");
-    });
+        RegisterValidator.validate(name, email, password, confirmPassword)
 
+        const registerObj = {
+            "name": name,
+            "email": email,
+            "password": password
+        }
+        isEmailExists(email).then(res => {
+
+                let exists = res;
+                if (exists) {
+                    toastr.error("", "This email Id is already exists", //if its true it is an error
+                        {
+                            preventDuplicate: true
+                        });
+                } else {
+
+                    console.log(registerObj);
+                    UserService.register(registerObj).then(res => {
+                        let data = res.data;
+                        console.log(data);
+                        toastr.success("successfully register");
+                        setTimeout(function() {
+                            window.location.href = "home_login.html";
+                        }, 1000)
+
+
+                    })
+
+                    .catch(err => {
+                        console.log(err.response.data);
+                        toastr.error("Unable to Register");
+                    });
+                }
+            })
+            .catch(err => {
+
+                console.error(err);
+                toastr.error("Error" + err.message)
+            });
+    } catch (err) {
+        console.log(err);
+        toastr.error(err.message);
+    }
 }

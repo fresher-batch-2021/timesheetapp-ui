@@ -9,14 +9,15 @@ function validDate() {
     document.getElementsByName("attendanceDate")[0].setAttribute('max', nextWeekDate)
 }
 
+// && (a == parseInt(a)) && (b == parseInt(b))
 
 function AddData() {
     // below variable r for checking
     var x = document.getElementById("taskName").value;
-    var y = document.getElementById("timeIn").value;
-    var a = document.getElementById("timeOut").value;
-    var b = document.getElementById("comments").value;
-    if ((parseInt(x) != (x)) && (y == parseInt(y)) && (a == parseInt(a)) && (b == parseInt(b))) {
+    var a = document.getElementById("timeIn").value;
+    var b = document.getElementById("timeOut").value;
+    var y = document.getElementById("comments").value;
+    if ((parseInt(x) != (x)) && (y == parseInt(y))) {
         alert("Wrong Value Entered");
     } else {
         var rows = "";

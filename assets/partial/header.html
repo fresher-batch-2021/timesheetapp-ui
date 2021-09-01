@@ -12,14 +12,14 @@
         </div>
     </a>
     <div class="header-icon">
-        <a class="home-icon" href="index.html"><img src="assets/images/home.svg" alt="home image"></a>
+        <a class="home-icon navLog" data-loggedIn="false" href="index.html"><img src="assets/images/home.svg" alt="home image"></a>
         <div class="nav-register">
-            <a href="register.html"><img src="assets/images/register.svg" alt="Register image"></a>
+            <a class="navLog" data-loggedIn="false" href="register.html"><img src="assets/images/register.svg" alt="Register image"></a>
         </div>
         <div class="nav-login">
 
 
-            <a href="home_login.html"><img src="assets/images/login.svg" alt="login image"></a>
+            <a class="navLog" data-loggedIn="false" href="home_login.html"><img src="assets/images/login.svg" alt="login image"></a>
 
 
         </div>
@@ -30,7 +30,7 @@
 
 
     </div>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
     <script>
         function checkLogin() {
@@ -41,7 +41,7 @@
             let user = userStr != null ? JSON.parse(userStr) : null;
             if (user != undefined || user != null) {
 
-                document.querySelector("#loggedIn").innerHTML = "Welcome <a href = 'profile.html'>" + user.name + "</a>  &nbsp;<a href='#' onclick='logout()'> Logout</a>";
+                document.querySelector("#loggedIn").innerHTML = "Welcome <a href = 'profile.html'>" + user.name + "</a>  &nbsp;<a data-loggedIn ='true' href='#' onclick='logout()'> Logout</a>";
             }
 
 
@@ -50,6 +50,25 @@
 
         function logout() {
             localStorage.removeItem("LOGGED_IN_USER");
+            window.location.href = "login.html";
+        }
+    </script>
+    <script>
+        let userStatus = localStorage.getItem("LOGGED_IN_USER");
+        // alert(userStatus);
+
+        if (userStatus != null) {
+
+            $(".navLog[data-loggedIn='true']").show();
+            $(".navLog[data-loggedIn='false']").hide();
+        } else {
+
+            $(".navLog[data-loggedIn='true']").hide();
+            $(".navLog[data-loggedIn='false']").show();
+        }
+
+        function logout() {
+            localStorage.clear();
             window.location.href = "login.html";
         }
     </script>

@@ -18,23 +18,32 @@ function login() {
     UserService.login(loginObj.email, loginObj.password).then(res => {
         let data = res.data;
         // console.log(data.docs[0]);
-        alert("Login Successful");
+
 
         const user = data.docs[0];
         localStorage.setItem("LOGGED_IN_USER", JSON.stringify(user));
         // console.log(user);
 
         if (user.role == "ADMIN") {
-            window.location.href = "all_timesheet.html";
+            toastr.success("Login Successful");
+            setTimeout(() => {
+                window.location.href = "all_timesheet.html";
+            }, 1000)
+
+
         } else {
-            window.location.href = "my_timesheet.html";
+            toastr.success("Login Successful");
+            setTimeout(() => {
+                window.location.href = "my_timesheet.html";
+            }, 1000);
+
         }
 
     })
 
     .catch(err => {
         console.log(err);
-        alert("Unable to Login");
+        toastr.error("Unable to Login");
     });
 
 }
