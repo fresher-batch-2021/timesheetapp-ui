@@ -18,7 +18,7 @@ function AddData() {
     var b = document.getElementById("timeOut").value;
     var y = document.getElementById("comments").value;
     if ((parseInt(x) != (x)) && (y == parseInt(y))) {
-        alert("Wrong Value Entered");
+        toastr.error("Wrong Value Entered");
     } else {
         var rows = "";
         var taskName = document.getElementById("taskName").value;
@@ -29,7 +29,7 @@ function AddData() {
         let userStr = localStorage.getItem("LOGGED_IN_USER");
         let user = userStr != null ? JSON.parse(userStr) : null;
         if (user == null) {
-            alert("Please Login");
+            toastr.error("Please Login");
             window.location.href = "login.html";
         }
         var userId = user._id;
@@ -61,11 +61,11 @@ function AddData() {
         axios.post(url, taskObj, { headers: { 'Authorization': basicAuth } })
             .then((res) => {
                 let data = res.data;
-                alert("Task added successfully");
+                toastr.success("Task added successfully");
 
             }).catch(err => {
                 console.log(err.response.data);
-                alert("Unable to Add");
+                toastr.error("Unable to Add");
             });
 
         console.log(taskObj);

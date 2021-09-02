@@ -21,7 +21,8 @@ function register() {
         const registerObj = {
             "name": name,
             "email": email,
-            "password": password
+            "password": password,
+            "role": "USER"
         }
         isEmailExists(email).then(res => {
 

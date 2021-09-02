@@ -1,7 +1,7 @@
 let params = new URLSearchParams(window.location.search.substr(1));
 
 let _id = params.get("id");
-TaskService.getTasks(_id).then(res => {
+TaskService.getTask(_id).then(res => {
     let update = res.data;
     console.log(update);
 
@@ -12,7 +12,7 @@ TaskService.getTasks(_id).then(res => {
 
 
     document.querySelector("#timeIn").value = update.inTime;
-    // alert(update.inTime);
+
 
     document.querySelector("#timeOut").value = update.outTime;
 
@@ -65,11 +65,11 @@ function updateTask() {
     TaskService.updateTask(formValues).then(res => {
         let users = res.data;
         // localStorage.setItem("register_in_users",JSON.stringify(users));
-        alert("Update successful");
+        toastr.success("Update successful");
         window.location.href = "timesheet_record.html";
     }).catch(err => {
         console.log(err.response.data);
-        alert("update failed");
+        toastr.error("update failed");
     });
 
 

@@ -1,5 +1,5 @@
 $("#header").load("assets/partial/header.html");
-$("#footer").load("footer.html");
+
 
 //    getting data
 let userStr = localStorage.getItem("LOGGED_IN_USER");
@@ -24,13 +24,13 @@ axios.get(url, { headers: { 'Authorization': basicAuth } }).then(res => {
     console.log(content);
     document.querySelector("#table-to-body").innerHTML = content;
 }).catch(err => {
-    alert("error in getting data");
+    toastr.error("error in getting data");
 
 });
 
 function deleteRow(id, rev) {
-    alert(id);
-    alert("Do you want to delete this data?");
+    toastr.success(id);
+    toastr.error("Do you want to delete this data?");
     const dbUsername = "apikey-v2-n9i9mmwl3nxoshs878dn76zeb22gvambxdzrr040ezw";
     const dbPassword = "deea8a2257ba08c5a56fb729475edfa1";
     const basicAuth = "Basic " + btoa(dbUsername + ":" + dbPassword);
@@ -39,10 +39,10 @@ function deleteRow(id, rev) {
     //  const url ="https://50eb74b6-05fa-4bcf-8bd8-696f364f9d42-bluemix.cloudantnosqldb.appdomain.cloud/timesheetappdb_tasks/${id}?rev=${rev}`;"
     console.log(url);
     axios.delete(url, { headers: { 'Authorization': basicAuth } }).then(res => {
-        alert("deleted succesfully");
+        toastr.success("deleted succesfully");
         window.location.href = "timesheet_record.html";
     }).catch(err => {
-        alert("error in deleting");
+        toastr.error("error in deleting");
     });
 
 }

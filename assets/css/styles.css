@@ -71,6 +71,14 @@ body {
     color: #86CBFF;
 }
 
+.list-user-header {
+    text-decoration: none;
+    /* margin-left: 10%; */
+    position: absolute;
+    left: 90%;
+    top: 39%;
+}
+
 .home-icon {
     position: absolute;
     right: 12%;

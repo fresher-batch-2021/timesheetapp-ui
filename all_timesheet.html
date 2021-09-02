@@ -34,7 +34,7 @@
 
 
     <section class="all-data">
-        <table id="all-timesheet" class="all-timesheet-class">
+        <table id="all-timesheet" class="all-timesheet-class table table-striped ">
             <caption>All Timesheet Listed Data</caption>
             <thead>
                 <tr>
@@ -71,12 +71,10 @@
             var content = "";
 
             TaskService.getAllTasks().then(res => {
-                // alert("inside")
+
                 let data = res.data.rows;
                 let all_task_list = data.map(obj => obj.doc);
 
-
-                // console.table(all_task_list);
 
                 let i = 0;
 
@@ -86,7 +84,7 @@
 
 
 
-                    content = content + `<tr><td>${task.userId}</td><td>${task.attendanceDate}</td><td>${task.name}</td><td>${task.inTime}</td><td>${task.outTime}</td><td>${task.totalHours}</td><td>${task.comments}</td><td><input type="button" id="approveButton" value="Approve" onclick="approveRow(${task.id})" /></td></tr>`;
+                    content = content + `<tr><td>${task.userId}</td><td>${task.attendanceDate}</td><td>${task.name}</td><td>${task.inTime}</td><td>${task.outTime}</td><td>${task.totalHours}</td><td>${task.comments}</td><td><input class="btn btn-success" type="button" id="approveButton" value="Approve" onclick="approveRow(${task.id})" /></td></tr>`;
 
 
                 }
@@ -94,7 +92,7 @@
 
             }).catch(err => {
                 console.log(err);
-                alert("Error in getting data");
+                toastr.error("Error in getting data");
             });
 
         }
@@ -103,17 +101,17 @@
 
 
         function approveRow(id) {
-            alert(id);
-            alert("Task is approved");
+
+            toastr.success("Task is approved");
             TaskService.getTask(id).then(res => {
                 let approveObj = res.data;
                 approveObj.status = "APPROVED";
                 TaskService.approveTask(id, approveObj)
                     .then(res1 => {
-                        alert("Successfully Approved");
+                        toastr.success("Successfully Approved");
                         window.location.reload();
                     }).catch(err => {
-                        alert("error");
+                        toastr.error("error");
                         console.log(err.response.message);
                     })
             })
