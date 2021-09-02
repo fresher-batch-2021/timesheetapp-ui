@@ -26,53 +26,51 @@
 
         </div>
         <div id="loggedIn">
-
-
-
         </div>
 
     </div>
+</div>
 
 
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
-    <script>
-        function checkLogin() {
-            let userStr = localStorage.getItem("LOGGED_IN_USER");
-
-
-
-            let user = userStr != null ? JSON.parse(userStr) : null;
-            if (user != undefined || user != null) {
-
-                document.querySelector("#loggedIn").innerHTML = "Welcome <a href = 'profile.html'>" + user.name + "</a>  &nbsp;<a data-loggedIn ='true' href='#' onclick='logout()'> Logout</a>";
-            }
+<script>
+    function checkLogin() {
+        let userStr = localStorage.getItem("LOGGED_IN_USER");
 
 
-        }
-        checkLogin();
 
-        function logout() {
-            localStorage.removeItem("LOGGED_IN_USER");
-            window.location.href = "login.html";
-        }
-    </script>
-    <script>
-        let userStatus = localStorage.getItem("LOGGED_IN_USER");
-        // alert(userStatus);
+        let user = userStr != null ? JSON.parse(userStr) : null;
+        if (user != undefined || user != null) {
 
-        if (userStatus != null) {
-
-            $(".navLog[data-loggedIn='true']").show();
-            $(".navLog[data-loggedIn='false']").hide();
-        } else {
-
-            $(".navLog[data-loggedIn='true']").hide();
-            $(".navLog[data-loggedIn='false']").show();
+            document.querySelector("#loggedIn").innerHTML = "Welcome <a href = 'profile.html'>" + user.name + "</a>  &nbsp;<a data-loggedIn ='true' href='#' onclick='logout()'> Logout</a>";
         }
 
-        function logout() {
-            localStorage.clear();
-            window.location.href = "login.html";
-        }
-    </script>
+
+    }
+    checkLogin();
+
+    function logout() {
+        localStorage.removeItem("LOGGED_IN_USER");
+        window.location.href = "login.html";
+    }
+</script>
+<script>
+    let userStatus = localStorage.getItem("LOGGED_IN_USER");
+    // alert(userStatus);
+
+    if (userStatus != null) {
+
+        $(".navLog[data-loggedIn='true']").show();
+        $(".navLog[data-loggedIn='false']").hide();
+    } else {
+
+        $(".navLog[data-loggedIn='true']").hide();
+        $(".navLog[data-loggedIn='false']").show();
+    }
+
+    function logout() {
+        localStorage.clear();
+        window.location.href = "login.html";
+    }
+</script>

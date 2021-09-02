@@ -49,6 +49,6 @@ function checkAccess(pageName, role) {
         setTimeout(function() {
             window.location.href = "login.html";
 
-        });
+        }, 0.1);
     }
 })();
