@@ -41,14 +41,16 @@
             </header>
 
             <div class="login-box">
-                <form onsubmit="login()">
-                    <label for="email">Email(*)</label>
-                    <input type="email" name="email" placeholder="Your Email" id="staffEmail" autocorrect="off" autocapitalize="off" autofocus="" required>
-                    <label for="password">Password(*)</label>
-                    <input type="password" name="password" placeholder="Your Password" id="staffPassword" minlength="8" maxlength="20" required>
+                <form id="form-login" onsubmit="login()">
+                    <label for="email">Email<span style="color:red" >*</span></label>
+                    <input type="email" name="email" placeholder="Your Email" id="staffEmail" autocorrect="off" autocapitalize="off" autofocus="" autocomplete="off" required>
+                    <label for="password">Password<span style="color:red" >*</span></label>
+                    <input type="password" name="password" placeholder="Your Password" id="staffPassword" required>
                     <div class="loginBtn-link">
-                        <button type="submit" class="loginCard-btn"> Log In</button>
+                        <button type="submit" class="loginCard-btn" id="loginCard-btn"> Log In</button>
                     </div>
+                    <p>Don't have account?
+                        <a href="register.html">Sign up</a></p>
 
 
                 </form>
@@ -82,7 +84,6 @@
     <script src="service-api/validator/login-validator.js"></script>
     <script src="assets/js/login.js"></script>
     <script src="assets/js/route.js"></script>
-
 </body>
 
 </html>

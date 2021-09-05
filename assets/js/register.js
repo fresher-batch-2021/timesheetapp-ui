@@ -1,4 +1,4 @@
-$("#header").load("assets/partial/header.html");
+$("#header").load("_header.html");
 
 
 
@@ -31,7 +31,7 @@ function register() {
                     toastr.error("", "This email Id is already exists", //if its true it is an error
                         {
                             preventDuplicate: true
-                        });
+                        }, 0.1);
                 } else {
 
                     console.log(registerObj);
@@ -41,7 +41,7 @@ function register() {
                         toastr.success("successfully register");
                         setTimeout(function() {
                             window.location.href = "home_login.html";
-                        }, 1000)
+                        }, 0.1)
 
 
                     })
@@ -49,6 +49,7 @@ function register() {
                     .catch(err => {
                         console.log(err.response.data);
                         toastr.error("Unable to Register");
+
                     });
                 }
             })

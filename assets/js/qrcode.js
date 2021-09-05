@@ -1,4 +1,4 @@
-$("#header").load("assets/partial/header.html");
+$("#header").load("_header.html");
 $("#footer").load("footer.html");
 $("#afterGetData").load("afterGetData.html");
 

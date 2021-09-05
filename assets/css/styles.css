@@ -54,6 +54,7 @@ body {
     height: 100px;
     float: left;
     clear: right;
+    margin-left: 10%;
 }
 
 .nav-note h1 {
@@ -101,6 +102,21 @@ body {
     position: absolute;
     right: 4%;
     top: 35%;
+}
+
+.tip-text {
+    visibility: hidden;
+    color: #000;
+    text-align: center;
+    border-radius: 2px;
+    border: 1px solid black;
+    position: absolute;
+    top: 100%;
+    z-index: 2;
+}
+
+.tool-icon:hover .tip-text {
+    visibility: visible;
 }
 
 
@@ -177,7 +193,7 @@ body {
 }
 
 .login-self-img {
-    margin: auto auto auto 20%;
+    margin: auto auto auto 50%;
 }
 
 .login-statement {
@@ -243,7 +259,7 @@ body {
 @media only screen and (min-width: 1200px) {}
 
 
-/* Home log in page  */
+/* Home loge in page  */
 
 #navigate-apps h2 {
     text-align: center;
@@ -263,6 +279,7 @@ body {
     border-radius: 10px;
     width: 500px;
     height: 300px;
+    position: relative;
     /* position: absolute;
     top: 40%;
     left: 32%; */
@@ -275,8 +292,8 @@ body {
     transition: background-color 1s;
     border-radius: 4px;
     display: inline-block;
-    margin: 10px 100px 50px 10px;
-    padding: 10px;
+    margin: 25px 40px 50px 30px;
+    padding: 20px 40px;
 }
 
 .navigate-second-image {
@@ -286,7 +303,7 @@ body {
     color: #fff;
     transition: background-color 1s;
     border-radius: 4px;
-    padding: 10px;
+    padding: 20px 40px;
 }
 
 .navigate-inside a {
@@ -296,8 +313,8 @@ body {
 
 .navigate-inside {
     position: absolute;
-    left: 35%;
-    top: 40%;
+    left: 31%;
+    top: 35%;
 }
 
 .navigate-first-image:hover,
@@ -725,8 +742,8 @@ body {
     justify-content: center;
     display: block;
     align-content: center;
-    margin: 8% auto auto auto;
-    padding: 10px 30px 60px 30px;
+    margin: 9% auto auto auto;
+    padding: 10px 30px 50px 30px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
     border-radius: 2px;
 }
@@ -749,7 +766,7 @@ body {
     padding: 10px;
     width: 90%;
     height: 20px;
-    margin: 10px 0px;
+    margin: 5px 0px;
     border: 1px solid #c6d2d9;
     border-radius: 2px;
     color: #333;
@@ -772,9 +789,30 @@ input[type=text]:focus {
     background-image: linear-gradient(to right, #840388 0%, #d808c3 51%, #840388 100%);
     transition: 0.4s;
     background-size: 200% auto;
+    cursor: pointer;
+    margin-top: 5px;
 }
 
 .sign-up-create-button:hover {
+    background-position: right center;
+}
+
+.sign-up-reset-button {
+    color: #FFFFFF;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    padding: 12px 15px;
+    width: 97%;
+    border-radius: 2px;
+    border: none;
+    background-image: linear-gradient(to right, #840388 0%, #d808c3 51%, #840388 100%);
+    transition: 0.4s;
+    background-size: 200% auto;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.sign-up-reset-button:hover {
     background-position: right center;
 }
 
@@ -853,6 +891,16 @@ input[type=text]:focus {
 
 .loginCard-btn:hover {
     background-position: right center;
+}
+
+.login-box p {
+    margin-left: 5%;
+}
+
+.login-box p a {
+    text-decoration: none;
+    color: #28a745;
+    font-weight: 550;
 }
 
 

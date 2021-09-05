@@ -1,5 +1,18 @@
-$("#header").load("assets/partial/header.html");
+$("#header").load("_header.html");
+$(document).ready(function() {
 
+    $("#form-login").submit(function(e) {
+
+        //stop submitting the form to see the disabled button effect
+        e.preventDefault();
+
+        //disable the submit button
+        $("#loginCard-btn").attr("disabled", true);
+
+        return true;
+
+    });
+});
 
 function login() {
 
@@ -28,14 +41,14 @@ function login() {
             toastr.success("Login Successful");
             setTimeout(() => {
                 window.location.href = "all_timesheet.html";
-            }, 1000)
+            }, 1)
 
 
         } else {
             toastr.success("Login Successful");
             setTimeout(() => {
                 window.location.href = "my_timesheet.html";
-            }, 1000);
+            }, 1);
 
         }
 

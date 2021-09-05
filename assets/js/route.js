@@ -5,7 +5,7 @@ const routes = [
     { path: "home_login.html" },
     { path: "profile.html", roles: ["USER"] },
     { path: "qrcode.html", roles: ["ADMIN"] },
-    { path: "update-task", roles: ["USER"] },
+    { path: "update-task.html", roles: ["USER"] },
     { path: "my_timesheet.html", roles: ["USER"] },
     { path: "timesheet_record.html", roles: ["USER"] },
     { path: "all_timesheet.html", roles: ["ADMIN"] },
@@ -35,9 +35,9 @@ function checkAccess(pageName, role) {
     return allowed;
 }
 (function() {
-    console.log("Routes initializing")
+    // console.log("Routes initializing")
     let user = JSON.parse(localStorage.getItem("LOGGED_IN_USER"));
-    console.log("LoggedIn User", user);
+    // console.log("LoggedIn User", user);
     let role = user != null ? user.role : null;
     let pathName = window.location.pathname.substr(1);
     let allowedAccess = checkAccess(pathName, role);
