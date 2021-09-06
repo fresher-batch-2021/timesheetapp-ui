@@ -740,12 +740,21 @@ body {
 
 /* All Timesheet record  */
 
+.all-task-search .search-container {
+    display: flex;
+}
+
+.all-task-search .search-section {
+    margin-top: 8%;
+    margin-left: 5%;
+}
+
 .all-data {
     background-color: #F8F5F1;
     opacity: 100;
     position: absolute;
     top: 35%;
-    left: 1%;
+    left: 4%;
     border-radius: 10px;
 }
 
