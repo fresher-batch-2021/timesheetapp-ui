@@ -13,14 +13,6 @@ class TaskService {
     }
 
 
-    // static getTasks(id) {
-
-    //     const url = "https://50eb74b6-05fa-4bcf-8bd8-696f364f9d42-bluemix.cloudantnosqldb.appdomain.cloud/timesheetappdb_tasks/" + id;
-
-
-    //     return axios.get(url, { headers: { Authorization: basicAuth } });
-    // }
-
     static getTask(id) {
         const url = `https://50eb74b6-05fa-4bcf-8bd8-696f364f9d42-bluemix.cloudantnosqldb.appdomain.cloud/timesheetappdb_tasks/${id}`;
         return axios.get(url, { headers: { 'Authorization': basicAuth } });

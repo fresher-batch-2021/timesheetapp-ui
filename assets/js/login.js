@@ -30,12 +30,12 @@ function login() {
 
     UserService.login(loginObj.email, loginObj.password).then(res => {
         let data = res.data;
-        // console.log(data.docs[0]);
+
 
 
         const user = data.docs[0];
         localStorage.setItem("LOGGED_IN_USER", JSON.stringify(user));
-        // console.log(user);
+
 
         if (user.role == "ADMIN") {
             toastr.success("Login Successful");

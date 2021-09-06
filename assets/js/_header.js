@@ -10,13 +10,8 @@ function checkLogin() {
 }
 checkLogin();
 
-function logout() {
-    localStorage.removeItem("LOGGED_IN_USER");
-    window.location.href = "login.html";
-}
 
 let userStatus = localStorage.getItem("LOGGED_IN_USER");
-// alert(userStatus);
 
 if (userStatus != null || userStatus != undefined) {
     console.log(userStatus.role);

@@ -14,10 +14,6 @@ const routes = [
 
 ];
 
-// function logout() {
-//     localstorage.clear();
-//     window.Location.href = "login.html";
-// }
 
 function checkAccess(pageName, role) {
     let allowed = false;
@@ -35,9 +31,9 @@ function checkAccess(pageName, role) {
     return allowed;
 }
 (function() {
-    // console.log("Routes initializing")
+
     let user = JSON.parse(localStorage.getItem("LOGGED_IN_USER"));
-    // console.log("LoggedIn User", user);
+
     let role = user != null ? user.role : null;
     let pathName = window.location.pathname.substr(1);
     let allowedAccess = checkAccess(pathName, role);

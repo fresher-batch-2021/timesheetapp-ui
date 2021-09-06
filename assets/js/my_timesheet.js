@@ -14,8 +14,8 @@ function validDate() {
 function AddData() {
     // below variable r for checking
     var x = document.getElementById("taskName").value;
-    var a = document.getElementById("timeIn").value;
-    var b = document.getElementById("timeOut").value;
+    // var a = document.getElementById("timeIn").value;
+    // var b = document.getElementById("timeOut").value;
     var y = document.getElementById("comments").value;
     if ((parseInt(x) != (x)) && (y == parseInt(y))) {
         toastr.error("Wrong Value Entered");
@@ -60,7 +60,7 @@ function AddData() {
         const url = "https://50eb74b6-05fa-4bcf-8bd8-696f364f9d42-bluemix.cloudantnosqldb.appdomain.cloud/timesheetappdb_tasks";
         axios.post(url, taskObj, { headers: { 'Authorization': basicAuth } })
             .then((res) => {
-                let data = res.data;
+
                 toastr.success("Task added successfully");
 
             }).catch(err => {
@@ -105,8 +105,6 @@ function SumHours() {
         timeOut = ConvertToSeconds(timeOut);
 
         diff = Math.abs(timeOut - timeIn);
-        // console.log( 'time difference is : ' + secondsTohhmmss(diff) );
-        // console.log(secondsTohhmmss(diff));
         return secondsTohhmmss(diff);
     }
 

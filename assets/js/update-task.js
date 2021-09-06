@@ -63,8 +63,8 @@ function updateTask() {
 
 
     TaskService.updateTask(formValues).then(res => {
-        let users = res.data;
-        // localStorage.setItem("register_in_users",JSON.stringify(users));
+
+
         toastr.success("Update successful");
         window.location.href = "timesheet_record.html";
     }).catch(err => {
@@ -90,7 +90,7 @@ function SumHours() {
         timeOut = ConvertToSeconds(timeOut);
 
         diff = Math.abs(timeOut - timeIn);
-        // console.log( 'time difference is : ' + secondsTohhmmss(diff) );
+
         console.log(secondsTohhmmss(diff));
         return secondsTohhmmss(diff);
     }

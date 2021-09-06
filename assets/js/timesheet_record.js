@@ -31,12 +31,9 @@ axios.get(url, { headers: { 'Authorization': basicAuth } }).then(res => {
 function deleteRow(id, rev) {
     toastr.success(id);
     toastr.error("Do you want to delete this data?");
-    const dbUsername = "apikey-v2-n9i9mmwl3nxoshs878dn76zeb22gvambxdzrr040ezw";
-    const dbPassword = "deea8a2257ba08c5a56fb729475edfa1";
-    const basicAuth = "Basic " + btoa(dbUsername + ":" + dbPassword);
-    //const url =`https://product-mock-api.herokuapp.com/timesheetapp/api/v1/tasks/${id}?rev=${rev}`;
+
     const url = "https://50eb74b6-05fa-4bcf-8bd8-696f364f9d42-bluemix.cloudantnosqldb.appdomain.cloud/timesheetappdb_tasks/" + id + "?rev=" + rev;
-    //  const url ="https://50eb74b6-05fa-4bcf-8bd8-696f364f9d42-bluemix.cloudantnosqldb.appdomain.cloud/timesheetappdb_tasks/${id}?rev=${rev}`;"
+
     console.log(url);
     axios.delete(url, { headers: { 'Authorization': basicAuth } }).then(res => {
         toastr.success("deleted succesfully");
