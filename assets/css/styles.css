@@ -4,9 +4,7 @@ body {
     /* font-family: 'Balsamiq Sans', cursive; */
     /* font-family: 'Montserrat' ; */
     /* font-family: 'Prompt', sans-serif; */
-    font-family: "Titillium Web";
-    /* font-family: 'Open Sans', sans-serif, 'Source Sans Pro', sans-serif; */
-    /* background-color: #FFFFFF; */
+    font-family: 'Titillium Web', 'Source Sans Pro', sans-serif;
     background-color: #EFFBFF;
     margin: 0;
     letter-spacing: .1em;
@@ -941,7 +939,6 @@ input[type=text]:focus {
     transition: 0.4s;
     font-size: 16px;
     background-image: linear-gradient(to right, #840388 0%, #d808c3 51%, #840388 100%);
-    transition: 0.4s;
     background-size: 200% auto;
 }
 

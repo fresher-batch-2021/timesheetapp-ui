@@ -20,7 +20,6 @@ class RegisterValidator {
             throw new Error("Comfirm Password cannot be blank");
         } else if (password != confirmPassword) {
             throw new Error("Confirm Password must be same as Password you entered");
-            return false;
         }
 
     }
