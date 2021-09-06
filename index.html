@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Timiefy | Timesheet</title>
+    <title> Home - Timiefy | Timesheet</title>
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,9 +15,7 @@
     <link rel="icon" href="assets/images/favicon.ico">
     <link rel="stylesheet" href="assets/css/styles.css">
 
-    <!-- toaster -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 </head>
 
@@ -26,76 +24,77 @@
     <header id="header"></header>
 
 
+    <main>
+        <section id="features-section" class="features">
 
-    <section id="features-section" class="features">
+            <div class="features-showcase-section">
+                <div class="features-showcase-section-content">
+                    <p>Activity</p> <br>
+                    <li><span>Record task</span></li>
+                    <li><span>Observe employee hours effort</span></li>
+                    <li><span>See current activity</span></li>
+                    <li><span>See who worked on what</span></li>
+                </div>
 
-        <div class="features-showcase-section">
-            <div class="features-showcase-section-content">
-                <p>Activity</p> <br>
-                <li><span>Record task</span></li>
-                <li><span>Observe employee hours effort</span></li>
-                <li><span>See current activity</span></li>
-                <li><span>See who worked on what</span></li>
+
             </div>
 
-
-        </div>
-
-        <div class="features-showcase-one-image">
-            <figure>
-                <img src="assets/images/timesheet-self.PNG" alt="feature timesheet image">
-            </figure>
-        </div>
-    </section>
-
-
-    <section id="register-section">
-        <div class="register-section">
-            <div class="register-inside">
-                <p>Register</p>
-                <br>
-                <li><span>Register with Mail id</span></li>
-                <li><span>If you have QR code, You can login with QR scanner </span></li>
-            </div>
-
-            <div>
+            <div class="features-showcase-one-image">
                 <figure>
-                    <img class="register-index-img" src="assets/images/register-index.PNG" alt="features list register image">
+                    <img src="assets/images/timesheet-self.PNG" alt="feature timesheet image">
                 </figure>
             </div>
-        </div>
-    </section>
-    <!-- <hr> -->
-    <p class="login-statement">Log in with QR and Mail</p>
-
-    <section id="login-section">
-        <div>
-
-            <figure>
-                <img class="login-both-img" src="assets/images/login-both.PNG" alt="features list login image">
-            </figure>
-
-        </div>
-        <div>
-            <figure>
-                <img class="login-self-img" src="assets/images/login-self.PNG" alt="features list login image">
-            </figure>
-        </div>
-
-    </section>
-    <section id="footer-section">
-        <div>
-            <p>@Timiefy | Timesheet 2021</p>
-
-        </div>
-        <a href="index.html">
-            <figure>
-                <img src="assets/images/arrow-up.svg" alt="top icon">
-            </figure>
-        </a>
+        </section>
 
 
-    </section>
+        <section id="register-section">
+            <div class="register-section">
+                <div class="register-inside">
+                    <p>Register</p>
+                    <br>
+                    <li><span>Register with Mail id</span></li>
+                    <li><span>If you have QR code, You can login with QR scanner </span></li>
+                </div>
+
+                <div>
+                    <figure>
+                        <img class="register-index-img" src="assets/images/register-index.PNG" alt="features list register image">
+                    </figure>
+                </div>
+            </div>
+        </section>
+        <!-- <hr> -->
+        <p class="login-statement">Log in with QR and Mail</p>
+
+        <section id="login-section">
+            <div>
+
+                <figure>
+                    <img class="login-both-img" src="assets/images/login-both.PNG" alt="features list login image">
+                </figure>
+
+            </div>
+            <div>
+                <figure>
+                    <img class="login-self-img" src="assets/images/login-self.PNG" alt="features list login image">
+                </figure>
+            </div>
+
+        </section>
+        <section id="footer-section">
+            <div>
+                <p>@Timiefy | Timesheet 2021</p>
+
+            </div>
+            <a href="index.html">
+                <figure>
+                    <img src="assets/images/arrow-up.svg" alt="top icon">
+                </figure>
+            </a>
+
+
+        </section>
+    </main>
 
 
 
@@ -103,7 +102,7 @@
     <script>
         $("#header").load("_header.html");
     </script>
-    <script src="assets/js/route.js"></script>
+
 
 </body>
 

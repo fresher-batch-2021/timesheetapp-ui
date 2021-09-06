@@ -46,3 +46,23 @@ function deleteRow(id, rev) {
     });
 
 }
+
+
+function searchName() {
+    let searchName = document.getElementById("searchBox").value;
+    let myTable = document.getElementById("table-to");
+    let tableRow = myTable.getElementsByTagName("tr");
+    for (var i = 0; i < tableRow.length; i++) {
+        let tableDatas = tableRow[i].getElementsByTagName("td")[2];
+
+        if (tableDatas) {
+            let textValue = tableDatas.textContent.toLowerCase() || tableDatas.innerText.toLowerCase();
+            if (textValue.indexOf(searchName) > -1) {
+                tableRow[i].style.display = "";
+            } else {
+                tableRow[i].style.display = "none";
+            }
+        }
+    }
+
+}

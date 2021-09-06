@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>My Timesheet</title>
+    <title>My Timesheet | Timesheet</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,83 +24,82 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 </head>
 
-<body>
+<body onload="validDate()">
     <header id="header">
 
     </header>
     <!-- <hr> -->
-    <section class="my-timesheet-table">
-        <table id="list" class="my-timesheet-class">
-            <caption>Timesheet Data for logged in user</caption>
-            <thead>
-                <tr>
+    <main>
+        <aside>
 
-                    <th id="my-timesheet-table-head">UserId</th>
-                    <th id="my-timesheet-table-head">AttendanceDate</th>
-                    <th id="my-timesheet-table-head">TaskName</th>
-                    <th id="my-timesheet-table-head">TimeIn</th>
-                    <th id="my-timesheet-table-head">TimeOut</th>
-                    <th id="my-timesheet-table-head">Total(hours)</th>
-                    <th id="my-timesheet-table-head">Comments</th>
+            <div class="add-task-form">
+                <h3>Add Task</h3>
+                <form id="list-task">
 
-                </tr>
-            </thead>
-            <tbody>
-                <!-- append -->
+                    <label for="attendanceDate">Enter Attendance Date</label>
+                    <input type="date" name="attendanceDate" id="attendanceDate" required autofocus>
 
-            </tbody>
+                    <label for="taskName">Enter Task Name</label>
+                    <input type="text" name="taskName" id="taskName" required autocomplete="off">
 
-        </table>
-    </section>
+                    <label for="timeIn">Enter time in</label>
+                    <input type="time" name="timeIn" id="timeIn" required>
+
+                    <label for="timeOut">Enter time out</label>
+                    <input type="time" name="timeOut" id="timeOut" required>
+
+                    <label for="comments">Enter comments</label>
+                    <input type="text" name="comments" id="comments" required autocomplete="off">
 
 
 
-    <div class="add-task-form">
-        <h3>Add Task</h3>
-        <form id="list-task">
+                    <button class="task-button2" id="button" type="button" name="button" value=" Add " onclick="AddData()">Add</button>
 
-            <body onload="validDate()">
-                <label for="attendanceDate">Enter Attendance Date</label><br>
-                <input type="date" name="attendanceDate" id="attendanceDate" required autofocus>
-                <br>
-            </body>
+                    <button class="task-button1" id="button" type="button" name="button" value=" Reset " onclick="ResetForm()">Reset</button>
 
+                </form>
+            </div>
 
-
-            <label for="taskName">Enter Task Name</label><br>
-            <input type="text" name="taskName" id="taskName" required autocomplete="off">
-            <br>
-            <label for="timeIn">Enter time in</label><br>
-            <input type="time" name="timeIn" id="timeIn" required>
-            <br>
-            <label for="timeOut">Enter time out</label><br>
-            <input type="time" name="timeOut" id="timeOut" required>
-            <br>
-            <label for="comments">Enter comments</label><br>
-            <input type="text" name="comments" id="comments" required autocomplete="off">
-            <br>
+        </aside>
+        <section>
 
 
-            <button class="task-button2" id="button" type="button" name="button" value=" Add " onclick="AddData()">Add</button>
-
-            <button class="task-button1" id="button" type="button" name="button" value=" Reset " onclick="ResetForm()">Reset</button>
-
-        </form>
-    </div>
-    <div class="timesheet-nav-division">
-        <a href="timesheet_record.html">
-            <figure class="timesheet-img">
-                <img src="assets/images/record.svg" alt="timesheet record">
-                <p class="my-timesheet-caption">Records</p>
-            </figure>
-        </a>
-    </div>
+            <div class="timesheet-nav-division">
+                <a href="timesheet_record.html">
+                    <figure class="timesheet-img">
+                        <img src="assets/images/record.svg" alt="timesheet record">
+                        <p class="my-timesheet-caption">Records</p>
+                    </figure>
+                </a>
+            </div>
 
 
+            <section class="my-timesheet-table">
+                <table id="list" class="my-timesheet-class">
+                    <caption>Timesheet Data for logged in user</caption>
+                    <thead>
+                        <tr>
 
-    <footer id="footer">
+                            <th id="my-timesheet-table-head">UserId</th>
+                            <th id="my-timesheet-table-head">AttendanceDate</th>
+                            <th id="my-timesheet-table-head">TaskName</th>
+                            <th id="my-timesheet-table-head">TimeIn</th>
+                            <th id="my-timesheet-table-head">TimeOut</th>
+                            <th id="my-timesheet-table-head">Total(hours)</th>
+                            <th id="my-timesheet-table-head">Comments</th>
 
-    </footer>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- append -->
+
+                    </tbody>
+
+                </table>
+            </section>
+        </section>
+
+    </main>
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>

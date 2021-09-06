@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>All Timesheets</title>
+    <title>All Timesheets | Timesheet</title>
 
     <link rel="stylesheet" href="assets/css/styles.css">
 
@@ -28,130 +28,45 @@
     <header id="header">
 
     </header>
-    <div class="search-container">
-        <div class="form-container search-section">
-            <form>
-                <label for="search-by-taskname">Search by Task Name</label>
-                <input class="searchBox form-control " type="text " id="searchBox" placeholder="Search For Task Name" onkeyup="searchName()" autocomplete="off">
-            </form>
+
+    <main>
+        <div class="search-container">
+            <div class="form-container search-section">
+                <form>
+                    <label for="search-by-taskname">Search by Task Name</label>
+                    <input class="searchBox form-control " type="text " id="searchBox" placeholder="Search For Task Name" onkeyup="searchName()" autocomplete="off">
+                </form>
+            </div>
         </div>
-    </div>
 
 
 
-    <section class="all-data">
-        <table id="all-timesheet" class="all-timesheet-class table table-striped ">
-            <caption>All Timesheet Listed Data</caption>
-            <thead>
-                <tr>
-                    <th id="table-class-head">User Id</th>
-                    <th id="table-class-head">Attendance Date</th>
-                    <th id="table-class-head">TaskName</th>
-                    <th id="table-class-head">Time_in</th>
-                    <th id="table-class-head">Time_out</th>
-                    <th id="table-class-head">Total(hours)</th>
-                    <th id="table-class-head">Comments</th>
-                    <th id="table-class-head">Actions</th>
-                </tr>
-            </thead>
-            <tbody id="all-data-body">
+        <section class="all-data">
+            <table id="all-timesheet" class="all-timesheet-class table table-striped ">
+                <caption>All Timesheet Listed Data</caption>
+                <thead>
+                    <tr>
+                        <th id="table-class-head">User Id</th>
+                        <th id="table-class-head">Attendance Date</th>
+                        <th id="table-class-head">TaskName</th>
+                        <th id="table-class-head">Time_in</th>
+                        <th id="table-class-head">Time_out</th>
+                        <th id="table-class-head">Total(hours)</th>
+                        <th id="table-class-head">Comments</th>
+                        <th id="table-class-head">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="all-data-body">
 
-            </tbody>
-        </table>
-    </section>
+                </tbody>
+            </table>
+        </section>
+    </main>
 
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="service-api/user-service/task-service.js"></script>
     <script src="assets/js/route.js"></script>
-    <script>
-        $("#header").load("_header.html");
-
-
-
-
-        //    getting data
-        let userStr = localStorage.getItem("LOGGED_IN_USER");
-        let user = userStr != null ? JSON.parse(userStr) : null;
-
-        function listAllTasks() {
-
-            var content = "";
-
-            TaskService.getAllTasks().then(res => {
-
-                let data = res.data.rows;
-                let all_task_list = data.map(obj => obj.doc);
-
-
-                let i = 0;
-
-                for (let task of all_task_list) {
-
-                    i = i + 1;
-
-
-
-                    content = content + `<tr><td>${task.userId}</td><td>${task.attendanceDate}</td><td>${task.name}</td><td>${task.inTime}</td><td>${task.outTime}</td><td>${task.totalHours}</td><td>${task.comments}</td><td><input class="btn btn-success" type="button" id="approveButton" value="Approve" onclick="approveRow(${task.id})" /></td></tr>`;
-
-
-                }
-                document.querySelector("#all-data-body").innerHTML = content;
-
-            }).catch(err => {
-                console.log(err);
-                toastr.error("Error in getting data");
-            });
-
-        }
-        listAllTasks();
-
-
-
-        function approveRow(id) {
-
-            toastr.success("Task is approved");
-            TaskService.getTask(id).then(res => {
-                let approveObj = res.data;
-                approveObj.status = "APPROVED";
-                TaskService.approveTask(id, approveObj)
-                    .then(res1 => {
-                        toastr.success("Successfully Approved");
-                        window.location.reload();
-                    }).catch(err => {
-                        toastr.error("error");
-                        console.log(err.response.message);
-                    })
-            })
-
-
-
-        }
-    </script>
-    <script>
-        function searchName() {
-            let searchName = document.getElementById("searchBox").value;
-            let myTable = document.getElementById("all-timesheet");
-            let tableRow = myTable.getElementsByTagName("tr");
-            for (var i = 0; i < tableRow.length; i++) {
-                let tableDatas = tableRow[i].getElementsByTagName("td")[2];
-
-                if (tableDatas) {
-                    let textValue = tableDatas.textContent.toLowerCase() || tableDatas.innerText.toLowerCase();
-                    if (textValue.indexOf(searchName) > -1) {
-                        tableRow[i].style.display = "";
-                    } else {
-                        tableRow[i].style.display = "none";
-                    }
-                }
-            }
-
-        }
-    </script>
-
-    </div>
-
-
-
+    <script src="assets/js/all_timesheet.js"></script>
 
 </body>
 

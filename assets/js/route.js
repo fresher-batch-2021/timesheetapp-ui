@@ -45,10 +45,10 @@ function checkAccess(pageName, role) {
 
 
     if (!allowedAccess) {
-        // toastr.error("You are not authorized to access this page,Redirecting to login page");
+        toastr.error("You are not authorized to access this page,Redirecting to login page");
         setTimeout(function() {
             window.location.href = "login.html";
 
-        }, 0.1);
+        }, 2000);
     }
 })();

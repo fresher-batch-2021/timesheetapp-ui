@@ -30,27 +30,25 @@
     <header id="header">
 
     </header>
-    <div class="search-container">
-        <div class="form-container search-section">
-            <form>
-                <label for="search-by-taskname">Search by Task Name</label>
-                <input class="searchBox form-control " type="text " id="searchBox" placeholder="Search For Task Name" onkeyup="searchName()" autocomplete="off">
-            </form>
+    <main>
+        <div class="record-heading">
+            <h2>Timesheet Record</h2>
         </div>
-        <div class="form-container search-date-section">
-            <form>
-                <label for="search-by-date">Search by Date</label>
-                <input class="searchBox form-control" type="type" id="searchBoxDate" placeholder="Search For Date" onkeyup="searchName()" autocomplete="off">
-            </form>
+
+        <div class="search-container">
+            <div class="form-container search-section">
+                <form>
+                    <label for="search-by-taskname">Search by Task Name</label>
+                    <input class="searchBox form-control " type="text " id="searchBox" placeholder="Search For Task Name" onkeyup="searchName()" autocomplete="off">
+                </form>
+            </div>
         </div>
-    </div>
+        <div class="back-to-add-task">
+            <a class="a-link a-info" href="my_timesheet.html">Add Task</a>
+        </div>
 
-
-
-    <div id="afterGetData">
-        <!-- append -->
         <section class="table-class">
-            <table id="table-to" class="record-table" style="border:1px solid black">
+            <table id="table-to" class="record-table">
                 <caption>Timesheet Listed Data</caption>
                 <thead>
 
@@ -70,51 +68,11 @@
             </table>
         </section>
 
-    </div>
-
+    </main>
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="assets/js/timesheet_record.js" charset="utf-8"></script>
-
-
-
-    <footer id="footer">
-        <!-- append -->
-    </footer>
-
-    <script>
-        function searchName() {
-            let searchName = document.getElementById("searchBox").value;
-            let myTable = document.getElementById("table-to");
-            let tableRow = myTable.getElementsByTagName("tr");
-            for (var i = 0; i < tableRow.length; i++) {
-                let tableDatas = tableRow[i].getElementsByTagName("td")[2];
-
-                if (tableDatas) {
-                    let textValue = tableDatas.textContent.toLowerCase() || tableDatas.innerText.toLowerCase();
-                    if (textValue.indexOf(searchName) > -1) {
-                        tableRow[i].style.display = "";
-                    } else {
-                        tableRow[i].style.display = "none";
-                    }
-                }
-            }
-
-        }
-    </script>
-    <script>
-        var $rows = $('#table-to tr');
-        $('#searchBoxDate').keyup(function() {
-            var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
-
-            $rows.show().filter(function() {
-                var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
-                return !~text.indexOf(val);
-            }).hide();
-
-        });
-    </script>
     <script src="assets/js/route.js"></script>
 </body>
 

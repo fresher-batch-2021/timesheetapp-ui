@@ -6,11 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Register</title>
+    <title>Register | Timesheet</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/styles.css">
 
     <!-- axios -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -20,63 +22,65 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
-    <link rel="stylesheet" href="assets/css/styles.css">
+
 </head>
 
 <body>
 
     <header id="header"></header>
 
-
-    <section class="register-container">
-
-
-
-        <div class="register-main">
-            <div class="register">
-                <!-- <img src="images\register.png" alt="login image"> -->
-                <header class="section-header">
-                    <span>
-            <h1 class="section-register-title">Register</h1>
-          </span>
-                </header>
-                <div class="register-box">
-                    <form onsubmit="register()">
-                        <label for="registerName" title="Name">Name<span style="color:red" >*</span></label>
-                        <input type="text" name="name" required autocomplete="off" id="registerName" placeholder="Your Name" autofocus pattern="[A-Za-z]{2,20}$">
-
-                        <label for="registerEmail" title="email">Email<span style="color:red" >*</span></label>
-                        <input type="email" name="email" required autocomplete="off" id="registerEmail" placeholder="Your Email" pattern="[a-z0-9.]+@[a-z]+\.[a-z]{2,}$" title="Example mail id : example@example.com">
+    <main>
+        <section class="register-container">
 
 
-                        <label for="registerPassword" title="password">Password<span style="color:red" >*</span></label>
-                        <input type="password" name="password" required autocomplete="off" id="registerPassword" placeholder="Your Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
-                            minlength="8">
+
+            <div class="register-main">
+                <div class="register">
+                    <!-- <img src="images\register.png" alt="login image"> -->
+                    <header class="section-header">
+                        <span>
+                             <h1 class="section-register-title">Register</h1>
+                        </span>
+                    </header>
+                    <div class="register-box">
+                        <form onsubmit="register()">
+                            <label for="registerName" title="Name">Name<span style="color:red" >*</span></label>
+                            <input type="text" name="name" required autocomplete="off" id="registerName" placeholder="Your Name" autofocus pattern="[A-Za-z]{2,20}$">
+
+                            <label for="registerEmail" title="email">Email<span style="color:red" >*</span></label>
+                            <input type="email" name="email" required autocomplete="off" id="registerEmail" placeholder="Your Email" pattern="[a-z0-9.]+@[a-z]+\.[a-z]{2,}$" title="Example mail id : example@example.com">
 
 
-                        <label for="registerConfirmPassword" title="confirmPassword">Confirm Password<span style="color:red" >*</span></label>
-                        <input type="password" name="registerConfrimPassword" required autocomplete="off" id="registerConfirmPassword" placeholder="Confirm Password">
+                            <label for="registerPassword" title="password">Password<span style="color:red" >*</span></label>
+                            <input type="password" name="password" required autocomplete="off" id="registerPassword" placeholder="Your Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
+                                minlength="8">
 
 
-                        <button type="submit" class="sign-up-create-button">Register</button>
-                        <button type="reset" class="sign-up-reset-button">Reset</button>
-                    </form>
+                            <label for="registerConfirmPassword" title="confirmPassword">Confirm Password<span style="color:red" >*</span></label>
+                            <input type="password" name="registerConfrimPassword" required autocomplete="off" id="registerConfirmPassword" placeholder="Confirm Password">
+
+
+                            <button type="submit" class="sign-up-create-button">Register</button>
+                            <button type="reset" class="sign-up-reset-button">Reset</button>
+                        </form>
+                    </div>
+
+
+
                 </div>
-
-
-
             </div>
-        </div>
 
-    </section>
+        </section>
+    </main>
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="assets/js/route.js"></script>
     <script src="assets/js/register.js"></script>
     <script src="service-api/user-service/user-service.js"></script>
     <script src="service-api/validator/sign_up-validator.js"></script>
     <script src="service-api/validator/email-validator.js"></script>
-    <script src="assets/js/route.js"></script>
+
 </body>
 
 </html>

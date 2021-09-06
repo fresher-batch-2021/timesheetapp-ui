@@ -26,66 +26,65 @@
         <!-- append -->
     </header>
 
+    <main>
+        <section class="content wrap">
 
-    <section class="content wrap">
-
-        <div>
-            <h1>Barcode scanner</h1>
-            <p><strong>Instructions:</strong></p>
-            <ul>
-                <li>Click the barcode to view <br> and point your screen towards the camera.</li>
-            </ul>
-            <p><strong>Important notes:</strong></p>
-            <ul>
-                <li>Make sure to allow the browser to access your camera.</li>
-
-            </ul>
-        </div>
-    </section>
-    <section class="qr-class">
-        <aside>
             <div>
+                <h1>Barcode scanner</h1>
+                <p><strong>Instructions:</strong></p>
+                <ul>
+                    <li>Click the barcode to view <br> and point your screen towards the camera.</li>
+                </ul>
+                <p><strong>Important notes:</strong></p>
+                <ul>
+                    <li>Make sure to allow the browser to access your camera.</li>
 
-                <a id="btn-scan-qr">
-                    <img src="assets/images/qr.png" alt="qr image">
-                </a>
+                </ul>
+            </div>
+        </section>
+        <aside>
+            <section class="qr-class">
+                <aside>
+                    <div>
 
-                <canvas hidden="" id="qr-canvas"></canvas>
+                        <a id="btn-scan-qr">
+                            <img src="assets/images/qr.png" alt="qr image">
+                        </a>
+
+                        <canvas hidden="" id="qr-canvas"></canvas>
+
+                    </div>
+                </aside>
+            </section>
+        </aside>
+
+        <section id="table-id">
+            <div class="table-align">
+
+                <table>
+                    <caption>User data for qr scan</caption>
+                    <thead>
+                        <th id="table-align-head">S NO</th>
+                        <th id="table-align-head">Name</th>
+                        <th id="table-align-head">Employee_Id</th>
+                        <th id="table-align-head">Email</th>
+                        <th id="table-align-head">Time_in</th>
+                        <th id="table-align-head">Time_out</th>
+                    </thead>
+                    <tbody id="qr-result" hidden=""></tbody>
+
+                </table>
+                <p id="outputData"></p>
+            </div>
+
 
             </div>
-        </aside>
-    </section>
-    <section id="table-id">
-        <div class="table-align">
-
-            <table>
-                <caption>User data for qr scan</caption>
-                <thead>
-                    <th id="table-align-head">S NO</th>
-                    <th id="table-align-head">Name</th>
-                    <th id="table-align-head">Employee_Id</th>
-                    <th id="table-align-head">Email</th>
-                    <th id="table-align-head">Time_in</th>
-                    <th id="table-align-head">Time_out</th>
-                </thead>
-                <tbody id="qr-result" hidden=""></tbody>
-
-            </table>
-            <p id="outputData"></p>
-        </div>
-
-
-        </div>
 
 
 
-    </section>
+        </section>
 
-
-
-    <footer id="footer">
-        <!-- append -->
-    </footer>
+    </main>
 
 
     <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
