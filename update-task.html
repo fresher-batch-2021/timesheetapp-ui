@@ -23,10 +23,10 @@
 
 <body>
     <header id="header"></header>
-    <main>
+    <main class="update-main">
 
 
-        <div class="update-task-section">
+        <section class="update-task-section">
             <!-- add-task-from -->
             <h3>Update Task</h3>
             <form id="list-task" onsubmit="updateTask();">
@@ -42,7 +42,7 @@
 
 
                 <label for="taskName">Enter Task Name</label><br>
-                <input type="text" name="taskName" id="taskName" required>
+                <input type="text" name="taskName" id="taskName" required autocomplete="off">
                 <br>
                 <label for="timeIn">Enter time in</label><br>
                 <input type="time" name="timeIn" id="timeIn" required>
@@ -51,7 +51,7 @@
                 <input type="time" name="timeOut" id="timeOut" required>
                 <br>
                 <label for="comments">Enter comments</label><br>
-                <input type="text" name="comments" id="comments" required>
+                <input type="text" name="comments" id="comments" required autocomplete="off">
                 <br>
 
 
@@ -62,12 +62,18 @@
                 <button type="button" class="task-button3"><a href="timesheet_record.html">Cancel</a></button>
 
             </form>
-        </div>
+        </section>
 
     </main>
+
+    <section id="footer">
+
+    </section>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script>
         $("#header").load("_header.html");
+        $("#footer").load("_footer.html");
+
     </script>
 
 

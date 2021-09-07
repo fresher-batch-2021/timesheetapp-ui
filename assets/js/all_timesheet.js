@@ -1,4 +1,6 @@
 $("#header").load("_header.html");
+$("#footer").load("_footer.html");
+
 
 //    getting data
 let userStr = localStorage.getItem("LOGGED_IN_USER");

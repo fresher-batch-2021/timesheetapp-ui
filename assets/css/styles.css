@@ -182,6 +182,7 @@ body {
     left: 9%;
 }
 
+
 #login-section {
     display: flex;
 }
@@ -201,10 +202,12 @@ body {
     font-size: 20px;
 }
 
-#footer-section {
+.footer-section {
+    
+    margin-top: 2%;
     height: 50px;
-    color: #07428E;
-    background-color: #FFFFFF;
+    color: #FFFFFF;
+    background-color:#29627e;
     text-align: center;
     padding: 3%;
 }
@@ -360,7 +363,10 @@ body {
 
 
 /* My timesheet page  */
-
+.my-timesheet-main {
+    margin-top: 7%;
+    padding: 20%;
+}
 .my-timesheet-table {
     background-color: #F8F5F1;
     opacity: 100;
@@ -586,10 +592,13 @@ body {
 
 
 /* Timesheet record page  */
-
+.timesheet-record-main {
+    margin-top: 7%;
+    padding: 15% 15% 30% 15% ;
+}
 .record-heading {
     display: flex;
-    margin-top: 8%;
+    margin-top: -20%;
     margin-left: 42%;
 }
 
@@ -633,12 +642,12 @@ body {
 
 .search-section {
     margin-top: 1%;
-    margin-left: 5%;
+    margin-left: -15.5%;
 }
 
 .back-to-add-task {
-    margin-left: 35%;
-    margin-top: -5%;
+    margin-left: 25%;
+    margin-top: -8%;
 }
 
 .back-to-add-task a {
@@ -649,16 +658,21 @@ body {
 
 
 /* Update task  */
+.update-main {
 
+    margin-top: 7%;
+    padding-top: 1%;
+
+ 
+}
 .update-task-section {
-    /* height: 45%; */
+    height: 45%;
     overflow-x: hidden;
-    width: 16%;
-    padding: 1% 8% 0.8% 2%;
+    width: 26%;
+    margin-top: 3%;
+    margin-left: 37%;
+    padding: 1% 2% 0.8% 2%;
     border-radius: 2%;
-    position: fixed;
-    top: 17%;
-    left: 37%;
     box-shadow: 0 0 20px rgba(0, 0, 0, .1);
     background-color: white;
 }
@@ -670,21 +684,11 @@ body {
 
 .update-task-section input {
     width: 100%;
+    padding-top: 1%;
+    padding-bottom: 1%;
 }
 
-.update-task-section form input[type=text] {
-    padding-right: 35%;
-}
 
-.update-task-section form input[type=time] {
-    padding-left: 31%;
-    padding-right: 5%;
-}
-
-.update-task-section form input[type=date] {
-    padding-right: 23%;
-    padding-left: 13%;
-}
 
 .update-task-section h3 {
     margin-top: 0;
@@ -703,7 +707,7 @@ body {
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
     padding: 12px 1px;
-    width: 137%;
+    width: 102%;
     border-radius: 2px;
     border: none;
     background-image: linear-gradient(to right, #840388 0%, #d808c3 51%, #840388 100%);
@@ -724,13 +728,16 @@ body {
 
 
 /* All Timesheet record  */
-
+.all-timesheet-main {
+    margin-top: 7%;
+    padding-bottom: 50%;
+}
 .all-task-search .search-container {
     display: flex;
 }
 
 .all-task-search .search-section {
-    margin-top: 8%;
+    margin-top: 1%;
     margin-left: 5%;
 }
 
@@ -739,7 +746,7 @@ body {
     opacity: 100;
     position: absolute;
     top: 35%;
-    left: 4%;
+    left: 0.5%;
     border-radius: 10px;
 }
 
@@ -783,7 +790,7 @@ body {
 }
 
 .register-box {
-    margin-top: 11%;
+    margin-top: 1%;
 }
 
 .section-register-title {
@@ -854,7 +861,10 @@ input[type=text]:focus {
 
 
 /* Login page */
-
+#login-container {
+    margin-top: 7%;
+    padding: 20%;
+}
 .login {
     width: 30%;
     /* background-color: #515E63; */
@@ -865,6 +875,8 @@ input[type=text]:focus {
     left: 34%;
     box-shadow: 0 0 20px rgba(0, 0, 0, .1);
     background-color: white;
+   
+
 }
 
 .section-header {
@@ -872,12 +884,12 @@ input[type=text]:focus {
 }
 
 .section-login-title {
-    padding-left: 5%;
+    padding-left: 20%;
     color: #580373;
 }
 
 .login-box {
-    margin-top: 10%;
+    margin-top: 3%;
 }
 
 .login label {

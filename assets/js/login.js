@@ -1,4 +1,5 @@
 $("#header").load("_header.html");
+$("#footer").load("_footer.html");
 $(document).ready(function() {
 
     $("#form-login").submit(function(e) {
