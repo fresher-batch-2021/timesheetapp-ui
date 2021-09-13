@@ -17,11 +17,14 @@ axios.get(url, { headers: { 'Authorization': basicAuth } }).then(res => {
     let tasks = res.data.rows.map(obj => obj.doc);
     let myTasks = tasks.filter(obj => obj.userId == user._id);
     var content = "";
-
+    console.log(myTasks.length);
     for (let task of myTasks) {
 
-        content = content + `<tr><td>${task.userId}</td><td>${task.attendanceDate}</td><td>${task.name}</td><td>${task.inTime}</td><td>${task.outTime}</td><td>${task.totalHours}</td><td>${task.comments}</td><td><input type="button" id="deleteButton" value="Delete" onclick="deleteRow('${task._id}', '${task._rev}')" />&ensp;<button><a href='update-task.html?id=${task._id}' style="text-decoration:none;">Edit</a></button></td></tr>`;
+        content = content + `<tr><td>${task.userId}</td><td>${task.attendanceDate}</td><td>${task.name}</td><td><time>${task.inTime}</time></td><td><time>${task.outTime}</time></td><td>${task.totalHours}</td><td>${task.comments}</td><td><input type="button" id="deleteButton" value="Delete" onclick="deleteRow('${task._id}', '${task._rev}')" />&ensp;<button><a href='update-task.html?id=${task._id}' style="text-decoration:none;">Edit</a></button></td></tr>`;
         //   <td><img src="images/trash.png" alt=""></td>
+    }
+    if(myTasks.length==0){
+        content+=`<tr class="no-record-class"> <td colspan="8">No Records Found</td></tr>`
     }
     console.log(content);
     document.querySelector("#table-to-body").innerHTML = content;

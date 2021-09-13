@@ -40,7 +40,7 @@ function AddData() {
         let userdata = JSON.parse(localStorage.getItem("LOGGED_IN_USER"));
 
 
-        rows += "<tr><td>" + userdata._id + "</td><td>" + attendanceDate + "</td><td>" + taskName + "</td><td>" + timeIn + "</td><td>" + timeOut + "</td><td>" +
+        rows += "<tr><td>" + userdata._id + "</td><td>" + attendanceDate + "</td><td>" + taskName + "</td><td><time>" + timeIn + "</time></td><td><time>" + timeOut + "</time></td><td>" +
             totalHours + "</td><td>" + comments + "</td></tr>";
         $(rows).appendTo("#list tbody");
 

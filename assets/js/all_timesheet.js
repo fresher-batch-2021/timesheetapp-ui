@@ -24,7 +24,7 @@ function listAllTasks() {
 
 
 
-            content = content + `<tr><td>${task.userId}</td><td>${task.attendanceDate}</td><td>${task.name}</td><td>${task.inTime}</td><td>${task.outTime}</td><td>${task.totalHours}</td><td>${task.comments}</td><td><input class="btn btn-success" type="button" id="approveButton" value="Approve" onclick="approveRow(${task.id})" /></td></tr>`;
+            content = content + `<tr><td>${task.userId}</td><td>${task.attendanceDate}</td><td>${task.name}</td><td><time>${task.inTime}</time></td><td><time>${task.outTime}</time></td><td>${task.totalHours}</td><td>${task.comments}</td><td><input class="btn btn-success" type="button" id="approveButton" value="Approve" onclick="approveRow(${task.id})" /></td></tr>`;
 
 
         }

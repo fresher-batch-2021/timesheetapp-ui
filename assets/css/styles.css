@@ -120,7 +120,7 @@ body {
 
 /* Index page  */
 
-.features p {
+.features h1 {
     font-size: 21px;
     line-height: 31px;
     color: #636B7B;
@@ -201,6 +201,8 @@ body {
     color: #88038B;
     font-size: 20px;
 }
+/* -------------Footer section----------------------- */
+
 
 .footer-section {
     
@@ -210,6 +212,7 @@ body {
     background-color:#29627e;
     text-align: center;
     padding: 3%;
+   
 }
 
 
@@ -296,7 +299,11 @@ body {
     border-radius: 4px;
     padding: 20px 40px;
 }
-
+.navigate-box-inside mark {
+    background-color: #006FB1;
+    color: #FFFFFF;
+    padding-left: 1%;
+}
 .navigate-box-inside a {
     text-decoration: none;
     color: black;
@@ -594,7 +601,7 @@ body {
 /* Timesheet record page  */
 .timesheet-record-main {
     margin-top: 7%;
-    padding: 15% 15% 30% 15% ;
+    padding: 15% 15% 20% 15% ;
 }
 .record-heading {
     display: flex;
@@ -607,7 +614,8 @@ body {
     border-radius: 10px;
     position: absolute;
     top: 42%;
-    left: 4%;
+    left: 6%;
+
 }
 
 .record-table th,
@@ -655,7 +663,9 @@ body {
     color: #0560AF;
     font-weight: 700;
 }
-
+.no-record-class{
+    text-align: center;
+}
 
 /* Update task  */
 .update-main {
@@ -728,9 +738,10 @@ body {
 
 
 /* All Timesheet record  */
+
 .all-timesheet-main {
     margin-top: 7%;
-    padding-bottom: 50%;
+    padding-bottom: 30%;
 }
 .all-task-search .search-container {
     display: flex;
@@ -742,12 +753,15 @@ body {
 }
 
 .all-data {
+   
     background-color: #F8F5F1;
     opacity: 100;
     position: absolute;
     top: 35%;
     left: 0.5%;
     border-radius: 10px;
+    display: flex;
+ 
 }
 
 .all-data th,
