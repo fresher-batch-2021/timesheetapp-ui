@@ -379,7 +379,7 @@ body {
     opacity: 100;
     position: absolute;
     top: 30%;
-    left: 22%;
+    left: 24%;
     border-radius: 10px;
 }
 
@@ -413,6 +413,7 @@ body {
 
 .add-task-form {
     /* height: 45%; */
+    display: none;
     overflow-x: hidden;
     width: 16%;
     padding: 2%;
@@ -473,7 +474,23 @@ body {
 
 
 /* ------------------------ */
-
+.open-button {
+    /* margin-top: 3%; */
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    padding: 12px 5px;
+    border-radius: 2px;
+    border: none;
+    background-image: linear-gradient(to right, #0560AF 0%, #6ab2f2 51%, #0560AF 100%);
+    transition: 0.4s;
+    background-size: 200% auto;
+    cursor: pointer;
+    position: absolute;
+    top: 23%;
+    left: 24%;
+}
 .task-button1 {
     margin-top: 3%;
     color: #FFFFFF;
@@ -481,12 +498,13 @@ body {
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
     padding: 12px 1px;
-    width: 97%;
+    width: 48%;
     border-radius: 2px;
     border: none;
     background-image: linear-gradient(to right, #840388 0%, #d808c3 51%, #840388 100%);
     transition: 0.4s;
     background-size: 200% auto;
+    cursor: pointer;
 }
 
 .task-button2 {
@@ -496,16 +514,31 @@ body {
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
     padding: 12px 1px;
-    width: 97%;
+    width: 48%;
     border-radius: 2px;
     border: none;
     background-image: linear-gradient(to right, #840388 0%, #d808c3 51%, #840388 100%);
     transition: 0.4s;
     background-size: 200% auto;
+    cursor: pointer;
 }
-
+.btn-cancel {
+    margin-top: 3%;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    padding: 12px 1px;
+    width: 97%;
+    border-radius: 2px;
+    border: none;
+    /* background-image: linear-gradient(to right, #840388 0%, #d808c3 51%, #840388 100%); */
+    transition: 0.4s;
+    background-size: 200% auto;
+    cursor: pointer;
+}
 .task-button1:hover,
-.task-button2:hover {
+.task-button2:hover,.open-button:hover {
     background-position: right center;
 }
 

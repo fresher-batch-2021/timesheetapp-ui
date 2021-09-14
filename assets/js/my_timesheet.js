@@ -122,5 +122,5 @@ function secondsTohhmmss(secs) {
     var hours = parseInt(secs / 3600);
     var seconds = parseInt(secs % 3600);
     var minutes = parseInt(seconds / 60);
-    return hours + "hours : " + minutes + "minutes ";
+    return hours + "hrs : " + minutes + "mins";
 }
